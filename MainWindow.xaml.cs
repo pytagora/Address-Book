@@ -27,8 +27,8 @@ namespace Address_book
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            Window winAddUser = new Window();
-            winAddUser.Show();
+            AddNewUser win2 = new AddNewUser();
+            win2.Show();
         }
 
         private void btnChangeUser_Click(object sender, RoutedEventArgs e)

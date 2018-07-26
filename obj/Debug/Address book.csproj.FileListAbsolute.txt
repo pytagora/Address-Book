@@ -13,3 +13,5 @@ c:\users\antonio\source\repos\Address book\Address book\obj\Debug\Address book.c
 c:\users\antonio\source\repos\Address book\Address book\obj\Debug\Address book.csproj.CoreCompileInputs.cache
 c:\users\antonio\source\repos\Address book\Address book\obj\Debug\Address book.exe
 c:\users\antonio\source\repos\Address book\Address book\obj\Debug\Address book.pdb
+C:\Users\Antonio\source\repos\Address book\Address book\obj\Debug\AddNewUser.g.cs
+C:\Users\Antonio\source\repos\Address book\Address book\obj\Debug\AddNewUser.baml
