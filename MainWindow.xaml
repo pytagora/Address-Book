@@ -1,0 +1,36 @@
+﻿<Window x:Class="Address_book.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Address_book"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1000" Background="PowderBlue" WindowState="Maximized" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <TextBlock Height="40" Width="Auto" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top">MY ADDRESS BOOK</TextBlock>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Source="/images/myprofilepic.jpg.jpg" Width="130"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="880,0,10,0">
+            <Button Style="{DynamicResource RoundCorner}" Name="btnAddUser" Click="btnAddUser_Click">Add User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="btnChangeUser" Click="btnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="btnDeleteUser" Click="btnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
+        </StackPanel>
+        <DataGrid ItemsSource="{Binding Users}" Margin="10,100,150,10" Width="1032" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="First Name"/>
+                <DataGridTemplateColumn Header="Last Name" />
+                <DataGridTemplateColumn Header="Place of birth"/>
+                <DataGridTemplateColumn Header="Date of birth"/>
+                <DataGridTemplateColumn Header="Gender"/>
+                <DataGridTemplateColumn Header="Residence"/>
+                <DataGridTemplateColumn Header="Phone number"/>
+                <DataGridTemplateColumn Header="Mail"/>
+                <DataGridTemplateColumn Header="Social Network ID"/>
+                <DataGridTemplateColumn Header="Type"/>
+                <DataGridTemplateColumn Header="Image"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+    
+</Window>
