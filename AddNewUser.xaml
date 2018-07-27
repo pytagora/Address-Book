@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-    Title="Add New User" Height="450" Width="800" Background="PowderBlue" WindowState="Maximized" ResizeMode="NoResize">
+    Title="Add New User" Height="350" Width="700" Background="PowderBlue" WindowState="Maximized" ResizeMode="NoResize">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -31,7 +31,12 @@
         <Label Grid.Row="2">Place of birth:</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label Grid.Row="3">Date of birth:</Label>
-        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  />
+        <DatePicker HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Grid.Row="3" 
+                    Grid.Column="1" 
+                    Width="200"
+                    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
         <Label Grid.Row="4">Gender:</Label>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>
@@ -72,7 +77,9 @@
         </ComboBox>
         <Label Grid.Row="10">Image:</Label>
         <TextBox Grid.Row="10" Grid.Column="1" IsReadOnly="True" Height="20" Width="200" HorizontalAlignment="Left"></TextBox>
-        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewImage" Click="btnAddNewImage_Click" Height="20" Width="40" HorizontalAlignment="Left" Margin="220,0,0,0">Add</Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewImage" Click="btnAddNewImage_Click" Height="20" Width="40" HorizontalAlignment="Left" Margin="220,0,0,0">Select</Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewUser" Click="btnAddNewUser_Click" Height="20" Width="100" HorizontalAlignment="Right" Margin="0,0,90,0">Add New User</Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnCancel" Click="btnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">Cancel</Button>
 
     </Grid>
 </Window>
