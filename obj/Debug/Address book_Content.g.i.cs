@@ -8,10 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/facebook.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/instagram.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/linkedin.ico")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/myprofilepic.jpg.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/twitter.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/backphoto.jpg")]
 
 
