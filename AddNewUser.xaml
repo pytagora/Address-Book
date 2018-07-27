@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-    Title="Add New User" Height="350" Width="700" Background="PowderBlue" WindowState="Maximized" ResizeMode="NoResize">
+    Title="Add New User" Height="350" Width="800" Background="PowderBlue" WindowState="Normal" ResizeMode="NoResize">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -26,6 +26,9 @@
         </Grid.RowDefinitions>
         <Label>First name:</Label>
         <TextBox Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Image Grid.Column="1" Grid.Row="0" Name="uploadphoto" Source="uploadphoto"  Margin="0,10,10,0" />
+        </StackPanel>
         <Label Grid.Row="1">Last name:</Label>
         <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label Grid.Row="2">Place of birth:</Label>
@@ -76,9 +79,9 @@
             </ComboBoxItem>
         </ComboBox>
         <Label Grid.Row="10">Image:</Label>
-        <TextBox Grid.Row="10" Grid.Column="1" IsReadOnly="True" Height="20" Width="200" HorizontalAlignment="Left"></TextBox>
-        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewImage" Click="btnAddNewImage_Click" Height="20" Width="40" HorizontalAlignment="Left" Margin="220,0,0,0">Select</Button>
-        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewUser" Click="btnAddNewUser_Click" Height="20" Width="100" HorizontalAlignment="Right" Margin="0,0,90,0">Add New User</Button>
+        <TextBox Grid.Row="10" Grid.Column="1" IsReadOnly="True" Name="photofile" Height="20" Width="300" HorizontalAlignment="Left"></TextBox>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewImage" Click="btnAddNewImage_Click" Height="20" Width="60" HorizontalAlignment="Left" Margin="320,0,0,0">Select</Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnAdd" Click="btnAdd_Click" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0">Add</Button>
         <Button Grid.Row="10" Grid.Column="1" Name="btnCancel" Click="btnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">Cancel</Button>
 
     </Grid>
