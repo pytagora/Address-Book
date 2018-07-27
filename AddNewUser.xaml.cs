@@ -21,7 +21,12 @@ namespace Address_book
     {
         public AddNewUser()
         {
-            InitializeComponent();
+           InitializeComponent();
+        }
+
+        private void btnAddNewImage_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -24,27 +24,55 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label>First name: </Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
+        <Label>First name:</Label>
+        <TextBox Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label Grid.Row="1">Last name:</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,10" />
+        <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label Grid.Row="2">Place of birth:</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="3">Gender:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="4"></Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="5">First name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="6">First name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="7">First name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="8">name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="9">First name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
-        <Label Grid.Row="10">First name:</Label>
-        <TextBox Grid.Column="1" Margin="0,0,0,10" />
+        <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="3">Date of birth:</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  />
+        <Label Grid.Row="4">Gender:</Label>
+        <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
+        <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>
+        <Label Grid.Row="5">Residence:</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" />
+        <Label Grid.Row="6">Phone number:</Label>
+        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" />
+        <Label Grid.Row="7">Mail:</Label>
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="8">Social Network ID:</Label>
+        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <Label Grid.Row="9">Type:</Label>
+        <ComboBox Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Width="200" HorizontalAlignment="Left">
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/images/facebook.ico" Height="20" Width="20"/>
+                    <TextBlock Margin="10,0,0,0">Facebook</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/images/twitter.ico" Height="20" Width="20"/>
+                    <TextBlock Margin="10,0,0,0">Twitter</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/images/instagram.ico" Height="20" Width="20"/>
+                    <TextBlock Margin="10,0,0,0">Instagram</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/images/linkedin.ico" Height="20" Width="20"/>
+                    <TextBlock Margin="10,0,0,0">LinkedIn</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+        <Label Grid.Row="10">Image:</Label>
+        <TextBox Grid.Row="10" Grid.Column="1" IsReadOnly="True" Height="20" Width="200" HorizontalAlignment="Left"></TextBox>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnAddNewImage" Click="btnAddNewImage_Click" Height="20" Width="40" HorizontalAlignment="Left" Margin="220,0,0,0">Add</Button>
+
     </Grid>
 </Window>
