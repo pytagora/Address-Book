@@ -20,9 +20,16 @@
             <Button Style="{DynamicResource RoundCorner}" Name="btnDeleteUser" Click="btnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding Users}"
-                  CanUserReorderColumns="False" CanUserResizeColumns="True"
+                  CanUserReorderColumns="False" CanUserResizeColumns="False"
                   CanUserResizeRows="False" CanUserSortColumns="True"
-                  Margin="10,100,150,10" Width="1032">
+                  Margin="10,100,150,10" Width="1032"
+                  GridLinesVisibility="Horizontal">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="BorderThickness" Value="0,0,3,0"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="First Name" />
                 <DataGridTemplateColumn Header="Last Name" />
