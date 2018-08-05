@@ -26,8 +26,8 @@ namespace Address_book
             InitializeComponent();
             
             List<User> users = new List<User>();
-            users.Add(new User() { Id = 1, FirstName = "Valentino", LastName = "Skobljanec", Birthday = new DateTime(1992,9,7)});
-
+            users.Add(new User() { Id = 1, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Birthday = new DateTime(1992, 9, 7) });
+        
             dbUsers.ItemsSource = users;
         }
 
@@ -54,6 +54,12 @@ namespace Address_book
             public string FirstName { get; set; }
 
             public string LastName { get; set; }
+
+            public string Residence { get; set; }
+
+            public string Email { get; set; }
+
+            public string SocialNetworkId { get; set; }
 
             public DateTime Birthday { get; set; }
         }

@@ -40,11 +40,11 @@
                 <DataGridTemplateColumn Header="Place of birth"/>
                 <DataGridTemplateColumn Header="Birthday" />
                 <DataGridTemplateColumn Header="Gender"/>
-                <DataGridTemplateColumn Header="Residence"/>
+                <DataGridTextColumn Header="Residence" Binding="{Binding Residence}"/>
                 <DataGridTemplateColumn Header="Phone number"/>
-                <DataGridTemplateColumn Header="Mail"/>
-                <DataGridTemplateColumn Header="Social Network ID"/>
-                <DataGridTemplateColumn Header="Type"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Social Network ID" Binding="{Binding SocialNetworkId}"/>
+                <DataGridTemplateColumn Header="Type" />
                 <DataGridTemplateColumn Header="Image" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
