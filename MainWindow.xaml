@@ -31,17 +31,19 @@
                     <Setter Property="BorderThickness" Value="0,0,1,0"/>
                     <Setter Property="BorderBrush" Value="Black"/>
                     <Setter Property="Height" Value="20" />
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
                 </Style>
             </DataGrid.CellStyle>
+
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Id"  />
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
                 <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
-                <DataGridTemplateColumn Header="Place of birth"/>
+                <DataGridTextColumn Header="Place of birth" Binding="{Binding BirthPlace}"/>
                 <DataGridTemplateColumn Header="Birthday" />
                 <DataGridTemplateColumn Header="Gender"/>
                 <DataGridTextColumn Header="Residence" Binding="{Binding Residence}"/>
-                <DataGridTemplateColumn Header="Phone number"/>
+                <DataGridTextColumn Header="Phone number" Binding="{Binding PhoneNumber}" />
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Social Network ID" Binding="{Binding SocialNetworkId}"/>
                 <DataGridTemplateColumn Header="Type" />
