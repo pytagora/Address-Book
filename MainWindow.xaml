@@ -1,11 +1,11 @@
-﻿<Window x:Class="Address_book.MainWindow"
+﻿<Window x:Class="Address_book.MyAddressBook"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000" WindowState="Normal" ResizeMode="NoResize">
+        Title="My Address Book" Height="650" Width="1000" WindowState="Normal" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Images/backphoto.jpg"></ImageBrush>
     </Window.Background>
@@ -19,7 +19,7 @@
             <Button Style="{DynamicResource RoundCorner}" Name="btnChangeUser" Click="btnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
             <Button Style="{DynamicResource RoundCorner}" Name="btnDeleteUser" Click="btnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding Users}"
+        <DataGrid ItemsSource="DataBinding users"
                   CanUserReorderColumns="False" CanUserResizeColumns="False"
                   CanUserResizeRows="False" CanUserSortColumns="True"
                   Margin="10,100,150,10" Width="1032"
@@ -31,10 +31,11 @@
                 </Style>
             </DataGrid.CellStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="First Name" />
+                <DataGridTemplateColumn Header="Id" />
+                <DataGridTemplateColumn Header="First Name" />
                 <DataGridTemplateColumn Header="Last Name" />
                 <DataGridTemplateColumn Header="Place of birth"/>
-                <DataGridTemplateColumn Header="Date of birth"/>
+                <DataGridTemplateColumn Header="Birthday"/>
                 <DataGridTemplateColumn Header="Gender"/>
                 <DataGridTemplateColumn Header="Residence"/>
                 <DataGridTemplateColumn Header="Phone number"/>

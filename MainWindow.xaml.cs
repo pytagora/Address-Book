@@ -18,11 +18,15 @@ namespace Address_book
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MyAddressBook : Window
     {
-        public MainWindow()
+        public MyAddressBook()
         {
             InitializeComponent();
+
+            List<User> users = new List<User>();
+            users.Add(new User() { Id = 1, Birthday = new DateTime(1992,9,7) });
+
         }
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
@@ -38,7 +42,14 @@ namespace Address_book
 
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            
+
+        }
+
+        public class User
+        {
+            public int Id { get; set; }
+
+            public DateTime Birthday { get; set; }
         }
     }
 }
