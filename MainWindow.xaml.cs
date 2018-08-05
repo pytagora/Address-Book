@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.CompilerServices;
 
 namespace Address_book
 {
@@ -23,10 +24,11 @@ namespace Address_book
         public MyAddressBook()
         {
             InitializeComponent();
-
+            
             List<User> users = new List<User>();
-            users.Add(new User() { Id = 1, Birthday = new DateTime(1992,9,7) });
+            users.Add(new User() { Id = 1, FirstName = "Valentino", LastName = "Skobljanec", Birthday = new DateTime(1992,9,7)});
 
+            dbUsers.ItemsSource = users;
         }
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
@@ -48,6 +50,10 @@ namespace Address_book
         public class User
         {
             public int Id { get; set; }
+
+            public string FirstName { get; set; }
+
+            public string LastName { get; set; }
 
             public DateTime Birthday { get; set; }
         }

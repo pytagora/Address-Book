@@ -22,27 +22,30 @@
         <DataGrid ItemsSource="DataBinding users"
                   CanUserReorderColumns="False" CanUserResizeColumns="False"
                   CanUserResizeRows="False" CanUserSortColumns="True"
-                  Margin="10,100,150,10" Width="1032"
-                  GridLinesVisibility="Horizontal">
+                  Margin="10,100,150,10" Width="1000"
+                  GridLinesVisibility="Horizontal"
+                  Name="dbUsers"
+                  AutoGenerateColumns="False">
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
-                    <Setter Property="BorderThickness" Value="0,0,3,0"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
                     <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="Height" Value="20" />
                 </Style>
             </DataGrid.CellStyle>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Id" />
-                <DataGridTemplateColumn Header="First Name" />
-                <DataGridTemplateColumn Header="Last Name" />
+                <DataGridTemplateColumn Header="Id"  />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
                 <DataGridTemplateColumn Header="Place of birth"/>
-                <DataGridTemplateColumn Header="Birthday"/>
+                <DataGridTemplateColumn Header="Birthday" />
                 <DataGridTemplateColumn Header="Gender"/>
                 <DataGridTemplateColumn Header="Residence"/>
                 <DataGridTemplateColumn Header="Phone number"/>
                 <DataGridTemplateColumn Header="Mail"/>
                 <DataGridTemplateColumn Header="Social Network ID"/>
                 <DataGridTemplateColumn Header="Type"/>
-                <DataGridTemplateColumn Header="Image"/>
+                <DataGridTemplateColumn Header="Image" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
