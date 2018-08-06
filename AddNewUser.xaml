@@ -42,7 +42,7 @@
                     Grid.Row="3" 
                     Grid.Column="1" 
                     Width="200"
-                    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+                    />
         <Label  FontWeight="Bold" Grid.Row="4">Gender:</Label>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>

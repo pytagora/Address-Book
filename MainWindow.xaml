@@ -15,9 +15,9 @@
             <Image Source="/images/myprofilepic.jpg.jpg" Width="100" Height="100"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1080,0,10,0">
-            <Button Style="{DynamicResource RoundCorner}" Name="btnAddUser" Click="btnAddUser_Click">Add User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="btnChangeUser" Click="btnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="btnDeleteUser" Click="btnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnAddUser" Click="BtnAddUser_Click">Add User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnChangeUser" Click="BtnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
         </StackPanel>
         <DataGrid ItemsSource="DataBinding users"
                   CanUserReorderColumns="False" CanUserResizeColumns="False"

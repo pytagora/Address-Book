@@ -32,20 +32,30 @@ namespace Address_book
             dbUsers.ItemsSource = users;
         }
 
-        private void btnAddUser_Click(object sender, RoutedEventArgs e)
+        public static bool IsWindowOpen<T>(string name = "") where T : Window
         {
-            AddNewUser win2 = new AddNewUser();
-            win2.Show();
+            return string.IsNullOrEmpty(name)
+                ? Application.Current.Windows.OfType<T>().Any()
+                : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
         }
 
-        private void btnChangeUser_Click(object sender, RoutedEventArgs e)
+        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewUser WindowNewUser = new AddNewUser();
+            if (!IsWindowOpen<Window>("WindowNewUser"))
+            {
+                WindowNewUser.Show();
+            }
+        }
+
+        private void BtnChangeUser_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         public class User
