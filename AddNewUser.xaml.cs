@@ -24,7 +24,7 @@ namespace Address_book
            InitializeComponent();
         }
 
-        private void btnAddNewImage_Click(object sender, RoutedEventArgs e)
+        private void BtnAddNewImage_Click(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -40,7 +40,6 @@ namespace Address_book
             if (result == true)
             {
                 // Open document 
-                string uploadphoto = dlg.FileName;
                 string filename = dlg.FileName;
                 photofile.Text = filename;
             }
@@ -51,12 +50,12 @@ namespace Address_book
 
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
