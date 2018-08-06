@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-        Title="My Address Book" Height="650" Width="1000" WindowState="Normal" ResizeMode="NoResize">
+        Title="My Address Book" Height="650" Width="1200" WindowState="Normal" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Images/backphoto.jpg"></ImageBrush>
     </Window.Background>
@@ -14,7 +14,7 @@
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
             <Image Source="/images/myprofilepic.jpg.jpg" Width="100" Height="100"/>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="880,0,10,0">
+        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1080,0,10,0">
             <Button Style="{DynamicResource RoundCorner}" Name="btnAddUser" Click="btnAddUser_Click">Add User</Button>
             <Button Style="{DynamicResource RoundCorner}" Name="btnChangeUser" Click="btnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
             <Button Style="{DynamicResource RoundCorner}" Name="btnDeleteUser" Click="btnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
@@ -40,13 +40,13 @@
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
                 <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
                 <DataGridTextColumn Header="Place of birth" Binding="{Binding BirthPlace}"/>
-                <DataGridTemplateColumn Header="Birthday" />
-                <DataGridTemplateColumn Header="Gender"/>
+                <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday}" />
+                <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
                 <DataGridTextColumn Header="Residence" Binding="{Binding Residence}"/>
                 <DataGridTextColumn Header="Phone number" Binding="{Binding PhoneNumber}" />
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Social Network ID" Binding="{Binding SocialNetworkId}"/>
-                <DataGridTemplateColumn Header="Type" />
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
                 <DataGridTemplateColumn Header="Image" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>

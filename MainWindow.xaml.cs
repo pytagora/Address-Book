@@ -26,7 +26,8 @@ namespace Address_book
             InitializeComponent();
             
             List<User> users = new List<User>();
-            users.Add(new User() { Id = 1, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Birthday = new DateTime(1992, 9, 7) });
+            users.Add(new User() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
+            users.Add(new User() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
         
             dbUsers.ItemsSource = users;
         }
@@ -57,6 +58,10 @@ namespace Address_book
 
             public string BirthPlace { get; set; }
 
+            public DateTime Birthday { get; set; }
+
+            public string Gender { get; set; }
+
             public string Residence { get; set; }
 
             public string Email { get; set; }
@@ -65,7 +70,8 @@ namespace Address_book
 
             public string SocialNetworkId { get; set; }
 
-            public DateTime Birthday { get; set; }
+            public string Type { get; set; }
         }
+
     }
 }
