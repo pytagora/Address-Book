@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.CompilerServices;
+using System.Windows.Threading;
+using Microsoft.Win32;
 
 namespace Address_book
 {
@@ -21,6 +23,7 @@ namespace Address_book
     /// </summary>
     public partial class MyAddressBook : Window
     {
+        private MediaPlayer mediaPlayer = new MediaPlayer();
         public MyAddressBook()
         {
             InitializeComponent();
@@ -30,6 +33,50 @@ namespace Address_book
             users.Add(new User() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
         
             dbUsers.ItemsSource = users;
+
+            DispatcherTimer Timer = new DispatcherTimer();
+            Timer.Interval = TimeSpan.FromSeconds(1);
+            Timer.Tick += Timer_Tick;
+            Timer.Start();
+        }
+
+        private void BtnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == true)
+                mediaPlayer.Open(new Uri(openFileDialog.FileName));
+
+            DispatcherTimer Timer = new DispatcherTimer();
+            Timer.Interval = TimeSpan.FromSeconds(1);
+            Timer.Tick += Timer_Tick;
+            Timer.Start();
+        }
+
+        void Timer_Tick(object sender, EventArgs e)
+        {
+            if (mediaPlayer.Source != null)
+            {
+                if (mediaPlayer.NaturalDuration.HasTimeSpan)
+                    lblStatus.Content = String.Format("{0} / {1}", mediaPlayer.Position.ToString(@"mm\:ss"), mediaPlayer.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
+            }
+            else
+                lblStatus.Content = "No file selected...";
+        }
+
+        private void BtnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Play();
+        }
+
+        private void BtnPause_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Pause();
+        }
+
+        private void BtnStop_Click(object sender, RoutedEventArgs e)
+        {
+            mediaPlayer.Stop();
         }
 
         public static bool IsWindowOpen<T>(string name = "") where T : Window
