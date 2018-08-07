@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-    Title="Add New User" Height="350" Width="800" WindowState="Normal" ResizeMode="NoResize">
+    Title="Add New User" Height="370" Width="800" WindowState="Normal" ResizeMode="NoResize">
     <Window.Background>
         <ImageBrush ImageSource="Images/backphoto.jpg"></ImageBrush>
     </Window.Background>
     <Grid Margin="10" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -26,11 +27,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label  FontWeight="Bold" Name="FirstName">First name:</Label>
         <TextBox Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
-            <Image Grid.Column="1" Grid.Row="0"  Margin="0,10,10,0" />
+        <StackPanel Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="5">
+            <Image  Margin="0,10,10,0" Width="80" Height="120" Stretch="Uniform"/>
         </StackPanel>
         <Label  FontWeight="Bold" Grid.Row="1">Last name:</Label>
         <TextBox  FontWeight="Bold" Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
@@ -54,7 +56,7 @@
         <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label  FontWeight="Bold" Grid.Row="8">Social Network ID:</Label>
         <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
-        <Label  FontWeight="Bold" Grid.Row="9">Type:</Label>
+        <Label  FontWeight="Bold" Grid.Row="9" >Type:</Label>
         <ComboBox Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Width="200" HorizontalAlignment="Left">
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
@@ -81,11 +83,13 @@
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
-        <Label  FontWeight="Bold" Grid.Row="10">Image:</Label>
-        <TextBox Grid.Row="10" Grid.Column="1" IsReadOnly="True" Name="photofile" Height="20" Width="300" HorizontalAlignment="Left"></TextBox>
-        <Button Grid.Row="10" Grid.Column="1" Name="BtnAddNewImage" Click="BtnAddNewImage_Click" Height="20" Width="60" HorizontalAlignment="Left" Margin="320,0,0,0">Select</Button>
-        <Button Grid.Row="10" Grid.Column="1" Name="BtnAdd" Click="BtnAdd_Click" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0">Add</Button>
-        <Button Grid.Row="10" Grid.Column="1" Name="BtnCancel" Click="BtnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">Cancel</Button>
+        <Label  FontWeight="Bold" Grid.Row="10">Comment:</Label>
+        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <Label  FontWeight="Bold" Grid.Row="11">Image:</Label>
+        <TextBox Grid.Row="11" Grid.Column="1" IsReadOnly="True" Name="photofile" Height="20" Width="300" HorizontalAlignment="Left"></TextBox>
+        <Button Grid.Row="11" Grid.Column="2" Name="BtnAddNewImage" Click="BtnAddNewImage_Click" Height="20" Width="60" HorizontalAlignment="Left" Margin="10,0,0,0">Select</Button>
+        <Button Grid.Row="11" Grid.Column="2" Name="BtnAdd" Click="BtnAdd_Click" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0">Add</Button>
+        <Button Grid.Row="11" Grid.Column="2" Name="BtnCancel" Click="BtnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">Cancel</Button>
 
     </Grid>
 </Window>

@@ -57,6 +57,7 @@
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="Social Network ID" Binding="{Binding SocialNetworkId}"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+                <DataGridTextColumn Header="Comment" Binding="{Binding Comment}"/>
                 <DataGridTemplateColumn Header="Image" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>

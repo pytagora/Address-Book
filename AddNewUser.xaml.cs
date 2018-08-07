@@ -82,6 +82,10 @@ namespace Address_book
             public string SocialNetworkId { get; set; }
 
             public string Type { get; set; }
+
+            public string Image { get; set; }
+
+            public string Comment { get; set; }
         }
 
     }
