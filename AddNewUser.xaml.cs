@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Address_book.MyAddressBook;
 
 namespace Address_book
 {
@@ -19,6 +20,7 @@ namespace Address_book
     /// </summary>
     public partial class AddNewUser : Window
     {
+
         public AddNewUser()
         {
            InitializeComponent();
@@ -45,19 +47,41 @@ namespace Address_book
             }
         }
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            List<User> users = new List<User>();
+            users.Add(new User() { Id = 3, FirstName = "asd", LastName = "asd", Residence = "a", BirthPlace = "Velika asd", Gender = "Male", PhoneNumber = 213123123, Email = "pero.ads@gmail.com", SocialNetworkId = "", Type = "" });
+            this.Close();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public class User
+        {
+            public int Id { get; set; }
+
+            public string FirstName { get; set; }
+
+            public string LastName { get; set; }
+
+            public string BirthPlace { get; set; }
+
+            public DateTime Birthday { get; set; }
+
+            public string Gender { get; set; }
+
+            public string Residence { get; set; }
+
+            public string Email { get; set; }
+
+            public long PhoneNumber { get; set; }
+
+            public string SocialNetworkId { get; set; }
+
+            public string Type { get; set; }
         }
 
     }
