@@ -49,9 +49,9 @@ namespace Address_book
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = new List<User>();
-            users.Add(new User() { Id = 3, FirstName = "asd", LastName = "asd", Residence = "a", BirthPlace = "Velika asd", Gender = "Male", PhoneNumber = 213123123, Email = "pero.ads@gmail.com", SocialNetworkId = "", Type = "" });
-            this.Close();
+            List<User> Users = new List<User>();
+            Users.Add(new User() { Id = 3, FirstName = "asd", LastName = "asd", Residence = "a", BirthPlace = "Velika asd", Gender = "Male", PhoneNumber = 213123123, Email = "pero.ads@gmail.com", SocialNetworkId = "", Type = "" });
+            //this.Close();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
