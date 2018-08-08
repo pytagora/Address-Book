@@ -106,7 +106,7 @@
     <Resource Include="Images\facebook.ico" />
     <Resource Include="Images\instagram.ico" />
     <Resource Include="Images\linkedin.ico" />
-    <Resource Include="Images\myprofilepic.jpg.jpg" />
+    <Resource Include="Images\myprofilepic.jpg" />
     <Resource Include="Images\twitter.ico" />
   </ItemGroup>
   <ItemGroup>

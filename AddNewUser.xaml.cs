@@ -42,8 +42,7 @@ namespace Address_book
             if (result == true)
             {
                 // Open document 
-                string filename = dlg.FileName;
-                photofile.Text = filename;
+                LoadPhoto.Source = new BitmapImage(new Uri(dlg.FileName));
             }
         }
 

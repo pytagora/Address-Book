@@ -14,19 +14,19 @@
         <StackPanel Margin="10">
             <Label Name="lblStatus" Content="Not playing..." HorizontalContentAlignment="Left" Margin="20"/>
             <WrapPanel HorizontalAlignment="Left">
-                <Button Name="BtnPlay" Click="BtnPlay_Click">Play</Button>
-                <Button Name="BtnPause" Margin="5,0" Click="BtnPause_Click">Pause</Button>
-                <Button Name="BtnStop" Click="BtnStop_Click">Stop</Button>
-                <Button Name="BtnOpen" Margin="5,0"  Click="BtnOpen_Click">Open</Button>
+                <Button Name="BtnPlay" Click="BtnPlay_Click">_Play</Button>
+                <Button Name="BtnPause" Margin="5,0" Click="BtnPause_Click">_Pause</Button>
+                <Button Name="BtnStop" Click="BtnStop_Click">_Stop</Button>
+                <Button Name="BtnOpen" Margin="5,0"  Click="BtnOpen_Click">_Open</Button>
             </WrapPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
-            <Image Source="/images/myprofilepic.jpg.jpg" Width="100" Height="100"/>
+            <Image Source="/images/myprofilepic.jpg" Width="100" Height="100"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1080,0,10,0">
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnAddUser" Click="BtnAddUser_Click">Add User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnChangeUser" Click="BtnChangeUser_Click" Margin="0,10,0,0">Change User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Margin="0,10,0,0">Delete User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnAddUser" Click="BtnAddUser_Click">_Add User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnChangeUser" Click="BtnChangeUser_Click" Margin="0,10,0,0">_Change User</Button>
+            <Button Style="{DynamicResource RoundCorner}" Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Margin="0,10,0,0">_Delete User</Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding Users}"
                   SelectedItem="{Binding Path=SelectedUsers, Mode=TwoWay}"
