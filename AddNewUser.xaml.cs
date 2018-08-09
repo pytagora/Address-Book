@@ -20,12 +20,13 @@ namespace Address_book
     /// </summary>
     public partial class AddNewUser : Window
     {
-
+        // Window for new contact form
         public AddNewUser()
         {
            InitializeComponent();
         }
 
+        // Method for adding contacts photo to database.
         private void BtnAddNewImage_Click(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog 
@@ -46,18 +47,22 @@ namespace Address_book
             }
         }
 
+        // This method should add data into database.
+        // Nothing done.
+        // Main method of the app.
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             List<User> Users = new List<User>();
-            Users.Add(new User() { Id = 3, FirstName = "asd", LastName = "asd", Residence = "a", BirthPlace = "Velika asd", Gender = "Male", PhoneNumber = 213123123, Email = "pero.ads@gmail.com", SocialNetworkId = "", Type = "" });
             //this.Close();
         }
 
+        // Closing button which works!
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        // Definition of contact class
         public class User
         {
             public int Id { get; set; }

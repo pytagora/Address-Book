@@ -32,3 +32,21 @@ C:\Users\Valentino\Desktop\ALLPLAN\Address book\Address book\obj\Debug\Address b
 C:\Users\Valentino\Desktop\ALLPLAN\Address book\Address book\obj\Debug\Address book.csproj.CoreCompileInputs.cache
 C:\Users\Valentino\Desktop\ALLPLAN\Address book\Address book\obj\Debug\Address book.exe
 C:\Users\Valentino\Desktop\ALLPLAN\Address book\Address book\obj\Debug\Address book.pdb
+C:\Users\Valentino\Desktop\pytagora\Address-book\bin\Debug\Address book.exe.config
+C:\Users\Valentino\Desktop\pytagora\Address-book\bin\Debug\Address book.exe
+C:\Users\Valentino\Desktop\pytagora\Address-book\bin\Debug\Address book.pdb
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.csprojAssemblyReference.cache
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\MainWindow.g.cs
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\AddNewUser.g.cs
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\App.g.cs
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book_MarkupCompile.cache
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book_MarkupCompile.lref
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\MainWindow.baml
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\AddNewUser.baml
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.g.resources
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address_book.Properties.Resources.resources
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.csproj.GenerateResource.cache
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.csproj.CoreCompileInputs.cache
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.exe
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\Address book.pdb
+C:\Users\Valentino\Desktop\pytagora\Address-book\obj\Debug\App.baml

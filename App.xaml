@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:Address_book"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+        <LinearGradientBrush x:Key="ButtonStyle" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkCyan" Offset="0"/>
+            <GradientStop Color="LightCyan" Offset="0.5"/>
+            <GradientStop Color="DarkCyan" Offset="1"/>
+        </LinearGradientBrush>
+        <Style TargetType="Button" >
+            <Setter Property="Background" Value="{StaticResource ButtonStyle}"/>
+        </Style>
     </Application.Resources>
 </Application>

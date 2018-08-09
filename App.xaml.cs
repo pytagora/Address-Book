@@ -14,6 +14,8 @@ namespace Address_book
     /// </summary>
     public partial class App : Application
     {
+        // Implementing data structure for table.
+        // In progress...
         List<User> users = new List<User>();
     }
 }

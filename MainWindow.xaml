@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Address_book"
         mc:Ignorable="d"
-        Title="My Address Book" Height="650" Width="1200" WindowState="Normal" ResizeMode="NoResize">
+        Title="My Address Book" Height="650" Width="1200" WindowState="Normal" ResizeMode="NoResize" FontFamily="Times New Roman">
     <Window.Background>
         <ImageBrush ImageSource="Images/backphoto.jpg"></ImageBrush>
     </Window.Background>
@@ -24,9 +24,9 @@
             <Image Source="/images/myprofilepic.jpg" Width="100" Height="100" Margin="0,10,10,0"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1080,0,10,0">
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnAddUser" Click="BtnAddUser_Click">_Add User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnChangeUser" Click="BtnChangeUser_Click" Margin="0,10,0,0">_Change User</Button>
-            <Button Style="{DynamicResource RoundCorner}" Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Margin="0,10,0,0">_Delete User</Button>
+            <Button Name="BtnAddUser" Click="BtnAddUser_Click">_Add User</Button>
+            <Button Name="BtnChangeUser" Click="BtnChangeUser_Click" Margin="0,10,0,0">_Change User</Button>
+            <Button Name="BtnDeleteUser" Click="BtnDeleteUser_Click" Margin="0,10,0,0">_Delete User</Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding Users}"
                   SelectedItem="{Binding Path=SelectedUsers, Mode=TwoWay}"
@@ -62,5 +62,5 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
-    
-</Window>
+</Window>    
+
