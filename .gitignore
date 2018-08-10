@@ -1,3 +1,6 @@
-bin
-obj
-.vs
+# Build Folders
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directory
+.vs/

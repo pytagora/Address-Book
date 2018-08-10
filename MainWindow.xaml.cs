@@ -24,17 +24,17 @@ namespace Address_book
     public partial class MyAddressBook : Window
     {
 
-        List<User> Users = new List<User>();
+        List<Contact> Users = new List<Contact>();
         private MediaPlayer mediaPlayer = new MediaPlayer();
         public MyAddressBook()
         {
             InitializeComponent();
 
             // adding two example to see how the format fits.
-            Users.Add(new User() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
-            Users.Add(new User() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
+            Users.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
+            Users.Add(new Contact() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
         
-            dbUsers.ItemsSource = Users;
+            dbContacts.ItemsSource = Users;
 
             DispatcherTimer Timer = new DispatcherTimer();
             Timer.Interval = TimeSpan.FromSeconds(1);
@@ -92,29 +92,29 @@ namespace Address_book
                 : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
         }
 
-        private void BtnAddUser_Click(object sender, RoutedEventArgs e)
+        private void BtnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            AddNewUser WindowNewUser = new AddNewUser();
-            if (!IsWindowOpen<Window>("WindowNewUser"))
+            AddNewContact WindowNewContact = new AddNewContact();
+            if (!IsWindowOpen<Window>("WindowNewContact"))
             {
-                WindowNewUser.Show();
+                WindowNewContact.Show();
             }
         }
 
         // Trying to find a proper method for selecting single row.
-        private void BtnChangeUser_Click(object sender, RoutedEventArgs e)
+        private void BtnChangeContact_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BtnDeleteUser_Click(object sender, RoutedEventArgs e)
+        private void BtnDeleteContact_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
         // Dillema about defining class for data.
         // Haven't find the proper way. Yet!
-        public class User
+        public class Contact
         {
             public int Id { get; set; }
 

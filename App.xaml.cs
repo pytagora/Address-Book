@@ -16,6 +16,6 @@ namespace Address_book
     {
         // Implementing data structure for table.
         // In progress...
-        List<User> users = new List<User>();
+        List<Contact> contacts = new List<Contact>();
     }
 }

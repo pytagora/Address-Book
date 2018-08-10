@@ -6,26 +6,26 @@
 [![GitHub license](https://img.shields.io/github/license/pytagora/Address-book.svg)](https://github.com/pytagora/Address-book/blob/master/LICENSE.md)
 
 ## About
-The idea is to learn and get necessary programming experience through developing, building and deploying the stable release of the software. Software has two windows. The main window contains all the necessary data in the shape of a table. An additional window is opened by clicking the button **Add User** which purpose is to add new user to the table.
+The idea is to learn and get necessary programming experience through developing, building and deploying the stable release of the software. Software has two windows. The main window contains all the necessary data in the shape of a table. An additional window is opened by clicking the button **Add** which purpose is to add new contact to the table.
 
 ### In progress:
-- Comment section has its limitation. Should make flexible size for input.
-- Adding new contact is possible at all. Data solution will be build in the following week.
-- Table is currently not able to store big number of data/rows what is wished for every modern app.
-- In the MainWindow there is the default photo, but the user should be able to put his own.
+- Comment section has its limitations. Should make flexible size for input.
+- Adding new contact is not possible at all. Database solution will be build in the following week.
+- Table is currently not able to display big number of data/rows what is wished for in every modern app.
+- Search and Filter query.
+- In the MainWindow there is the default photo, but the user himself should be able to put his own.
 - There still isn't made a decision which data is mandatory and which is elective.
 
 ### Future ideas:
 - *Email* and *Social Network Id* as a hyperlink.
 - Information form for *user* himself.
-- *Residenc*e place connected to Google Maps.
-- Re-naming data class *User* to Contact since this current state is not convenient and is mostly misleading.
+- *Residence* place connected to Google Maps.
 
 ### Additional feature:
-- *Loading photo* for each new contact in the AddNewUser window.
+- *Loading photo* for each new contact in the AddNewContact window.
 - *Music Player* in the top left corner of MainWindow.
 
-Below you can see the current state of the software. Two contact which data you can see is loaded using Code behind method not UI solution.
+Below you can see the current state of the software. Two contacts which data you can see are loaded manually using Code behind method not UI solution.
 ![Current look of the application](https://raw.githubusercontent.com/pytagora/Address-Book/master/images/Demo_App.jpg)
 
 ## Release Notes
@@ -36,12 +36,12 @@ Below is a summary of major changes.
 
 ### 1.0.1
 - Initial build of the application.
-- MainWindow and AddNewUser included.
+- MainWindow and AddNewContact included.
 - Code behind buttons done only partially.
 - Background photo as template for both windows.
 - Multiple data type input possible.
-- Loading photo for new user.
-- Fixed size for both windows
+- Loading photo for new contact.
+- Fixed size for both windows.
 - Style for buttons, table and etc. (In progress...)
 
 # License

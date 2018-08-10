@@ -18,10 +18,10 @@ namespace Address_book
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class AddNewUser : Window
+    public partial class AddNewContact : Window
     {
         // Window for new contact form
-        public AddNewUser()
+        public AddNewContact()
         {
            InitializeComponent();
         }
@@ -52,7 +52,7 @@ namespace Address_book
         // Main method of the app.
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            List<User> Users = new List<User>();
+            List<Contact> contacts = new List<Contact>();
             //this.Close();
         }
 
@@ -63,7 +63,7 @@ namespace Address_book
         }
 
         // Definition of contact class
-        public class User
+        public class Contact
         {
             public int Id { get; set; }
 
