@@ -29,22 +29,22 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label  FontWeight="Bold" Name="FirstName">First name:</Label>
-        <TextBox Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <Label  FontWeight="Bold">First name:</Label>
+        <TextBox Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="firstName"/>
         <StackPanel Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.RowSpan="5">
             <Image  Margin="0,10,10,0" Width="100" Height="100" Name="LoadPhoto" Stretch="Uniform"/>
         </StackPanel>
         <Label  FontWeight="Bold" Grid.Row="1">Last name:</Label>
-        <TextBox  FontWeight="Bold" Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <TextBox  FontWeight="Bold" Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="lastName"/>
         <Label  FontWeight="Bold" Grid.Row="2">Place of birth:</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="birthPlace"/>
         <Label  FontWeight="Bold" Grid.Row="3">Date of birth:</Label>
         <DatePicker HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Grid.Row="3" 
                     Grid.Column="1" 
                     Width="200"
-                    />
+                    Name="birthday"/>
         <Label  FontWeight="Bold" Grid.Row="4">Gender:</Label>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>

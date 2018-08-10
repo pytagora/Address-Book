@@ -30,11 +30,12 @@ namespace Address_book
         private void BtnAddNewImage_Click(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog 
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Set filter for file extension and default file extension 
-            dlg.DefaultExt = ".png";
-            dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+            {
+                // Set filter for file extension and default file extension 
+                DefaultExt = ".png",
+                Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
+            };
 
             // Display OpenFileDialog by calling ShowDialog method 
             Nullable<bool> result = dlg.ShowDialog();
@@ -52,7 +53,10 @@ namespace Address_book
         // Main method of the app.
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            List<Contact> contacts = new List<Contact>();
+            Contact contact = new Contact
+            {
+                FirstName = firstName.Text
+            };
             //this.Close();
         }
 
@@ -61,7 +65,6 @@ namespace Address_book
         {
             this.Close();
         }
-
         // Definition of contact class
         public class Contact
         {
@@ -91,6 +94,5 @@ namespace Address_book
 
             public string Comment { get; set; }
         }
-
     }
 }

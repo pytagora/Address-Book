@@ -16,6 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using Microsoft.Win32;
 
+
 namespace Address_book
 {
     /// <summary>
@@ -24,20 +25,22 @@ namespace Address_book
     public partial class MyAddressBook : Window
     {
 
-        List<Contact> Users = new List<Contact>();
+        List<Contact> contacts = new List<Contact>();
         private MediaPlayer mediaPlayer = new MediaPlayer();
         public MyAddressBook()
         {
             InitializeComponent();
 
             // adding two example to see how the format fits.
-            Users.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
-            Users.Add(new Contact() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
+            contacts.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
+            contacts.Add(new Contact() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
         
-            dbContacts.ItemsSource = Users;
+            dbContacts.ItemsSource = contacts;
 
-            DispatcherTimer Timer = new DispatcherTimer();
-            Timer.Interval = TimeSpan.FromSeconds(1);
+            DispatcherTimer Timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
             Timer.Tick += Timer_Tick;
             Timer.Start();
         }
@@ -45,13 +48,17 @@ namespace Address_book
         // Method to read audio file.
         private void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*"
+            };
             if (openFileDialog.ShowDialog() == true)
                 mediaPlayer.Open(new Uri(openFileDialog.FileName));
 
-            DispatcherTimer Timer = new DispatcherTimer();
-            Timer.Interval = TimeSpan.FromSeconds(1);
+            DispatcherTimer Timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
             Timer.Tick += Timer_Tick;
             Timer.Start();
         }
@@ -111,9 +118,7 @@ namespace Address_book
         {
 
         }
-
-        // Dillema about defining class for data.
-        // Haven't find the proper way. Yet!
+        // Definition of contact class
         public class Contact
         {
             public int Id { get; set; }
@@ -138,10 +143,9 @@ namespace Address_book
 
             public string Type { get; set; }
 
-            public string Comment { get; set; }
-
             public string Image { get; set; }
-        }
 
+            public string Comment { get; set; }
+        }
     }
 }
