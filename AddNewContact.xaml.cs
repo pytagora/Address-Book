@@ -45,6 +45,7 @@ namespace Address_book
             {
                 // Open document 
                 LoadPhoto.Source = new BitmapImage(new Uri(dlg.FileName));
+                photo.Text = dlg.FileName;
             }
         }
 
@@ -55,16 +56,26 @@ namespace Address_book
         {
             Contact contact = new Contact
             {
-                FirstName = firstName.Text
+                FirstName = firstName.Text,
+                LastName = lastName.Text,
+                BirthPlace = birthPlace.Text,
+                //Birthday = birthday.SelectedDateFormat,
+                //Gender = gender,
+                Email = email.Text,
+                Comment = comment.Text,
+                Image = LoadPhoto.Source,
             };
-            //this.Close();
+            string newJson = Newtonsoft.Json.JsonConvert.SerializeObject(contact);
+            MessageBox.Show(newJson);
+            Close();
         }
 
         // Closing button which works!
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
+
         // Definition of contact class
         public class Contact
         {
@@ -90,7 +101,7 @@ namespace Address_book
 
             public string Type { get; set; }
 
-            public string Image { get; set; }
+            public ImageSource Image { get; set; }
 
             public string Comment { get; set; }
         }

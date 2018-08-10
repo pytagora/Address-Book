@@ -35,7 +35,7 @@
             <Image  Margin="0,10,10,0" Width="100" Height="100" Name="LoadPhoto" Stretch="Uniform"/>
         </StackPanel>
         <Label  FontWeight="Bold" Grid.Row="1">Last name:</Label>
-        <TextBox  FontWeight="Bold" Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="lastName"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="lastName"/>
         <Label  FontWeight="Bold" Grid.Row="2">Place of birth:</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="birthPlace"/>
         <Label  FontWeight="Bold" Grid.Row="3">Date of birth:</Label>
@@ -45,7 +45,7 @@
                     Grid.Column="1" 
                     Width="200"
                     Name="birthday"/>
-        <Label  FontWeight="Bold" Grid.Row="4">Gender:</Label>
+        <Label  FontWeight="Bold" Grid.Row="4" Name="gender">Gender:</Label>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>
         <Label  FontWeight="Bold" Grid.Row="5">Residence:</Label>
@@ -53,7 +53,7 @@
         <Label  FontWeight="Bold" Grid.Row="6">Phone number:</Label>
         <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" />
         <Label  FontWeight="Bold" Grid.Row="7">E-mail:</Label>
-        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" Name="email"/>
         <Label  FontWeight="Bold" Grid.Row="8">Social Network ID:</Label>
         <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
         <Label  FontWeight="Bold" Grid.Row="9" >Type:</Label>
@@ -84,9 +84,9 @@
             </ComboBoxItem>
         </ComboBox>
         <Label  FontWeight="Bold" Grid.Row="10">Comment:</Label>
-        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" Name="comment"/>
         <Label  FontWeight="Bold" Grid.Row="11">Image:</Label>
-        <TextBox Grid.Row="11" Grid.Column="1" IsReadOnly="True" Name="photofile" Height="20" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Grid.Row="11" Grid.Column="1" IsReadOnly="True" Height="20" Width="300" HorizontalAlignment="Left" Name="photo"></TextBox>
         <Button Grid.Row="11" Grid.Column="2" Name="BtnAddNewImage" Click="BtnAddNewImage_Click" Height="20" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0">_Select</Button>
         <Button Grid.Row="11" Grid.Column="2" Name="BtnAdd" Click="BtnAdd_Click" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0">_Add</Button>
         <Button Grid.Row="11" Grid.Column="2" Name="BtnCancel" Click="BtnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">_Cancel</Button>
