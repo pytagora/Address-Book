@@ -10,6 +10,75 @@ namespace SampleConsoleApplication
     {
         static void Main(string[] args)
         {
+            Email hotmail = new Email("perica@hotmail.com");
+            Contact contact = new Contact("ivica",hotmail);
+            Console.WriteLine("\r\nProcess done. Press any key to exit.");
+            Console.ReadKey();
+            return;
+        }
+    }
+
+    internal class Contact
+    {
+        private readonly string _name = string.Empty;
+        private readonly List<Email> _emails = null;
+
+        public int Id { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string BirthPlace { get; set; }
+
+        public DateTime Birthday { get; set; }
+
+        public string Gender { get; set; }
+
+        public string Residence { get; set; }
+
+        //private readonly List<Email> _emails = null;
+
+        public long PhoneNumber { get; set; }
+
+        public string SocialNetworkId { get; set; }
+
+        public string Type { get; set; }
+
+        public string Image { get; set; }
+
+        public string Comment { get; set; }
+
+        public Contact(string name, Email email)
+        {
+            _name = name;
+            _emails = new List<Email>();
+            Console.WriteLine("New contact created called '{0}'", name);
+
+            this.AddEmail(email);
+        }
+
+        public void AddEmail(Email email)
+        {
+            _emails.Add(email);
+            Console.WriteLine("Email called '{0}' added to contact called '{1}'", email.Name,_name);
+        }
+    }
+    internal class Email
+    {
+        private string _emailName = string.Empty;
+    
+        public Email (string name)
+        {
+            _emailName = name;
+            Console.WriteLine("New email created called '{0}'", name);
+        }
+
+        public string Name
+        {
+            get { return _emailName; }
+
+            set { _emailName = value;  }
         }
     }
 }
