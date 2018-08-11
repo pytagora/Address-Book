@@ -26,7 +26,7 @@ The idea is to learn and get necessary programming experience through developing
 - *Music Player* in the top left corner of MainWindow.
 
 Below you can see the current state of the software. Two contacts which data you can see are loaded manually using Code behind method not UI solution.
-![Current look of the application](https://raw.githubusercontent.com/pytagora/Address-Book/master/images/Demo_App.jpg)
+![Current look of the application](https://raw.githubusercontent.com/pytagora/Address-Book/master/projects/view/images/Demo_App.jpg)
 
 ## Release Notes
 Below is a summary of major changes.
