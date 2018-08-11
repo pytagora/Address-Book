@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address book", "Address-book\Address book.csproj", "{B7D129C0-24F4-493F-906F-E48DB0399A82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address book", "view\Address book.csproj", "{B7D129C0-24F4-493F-906F-E48DB0399A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A26C703A-F0E7-41C4-A368-16712F1176F7}
+		SolutionGuid = {0BF7E99F-8F77-4BB2-A7E0-C23AAFF0450F}
 	EndGlobalSection
 EndGlobal

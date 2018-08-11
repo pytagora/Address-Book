@@ -107,17 +107,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\facebook.ico" />
-    <Resource Include="Images\instagram.ico" />
-    <Resource Include="Images\linkedin.ico" />
-    <Resource Include="Images\myprofilepic.jpg" />
-    <Resource Include="Images\twitter.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\backphoto.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\uploadphoto.jpg" />
+    <Resource Include="images\backphoto.jpg" />
+    <Resource Include="images\Demo_App.jpg" />
+    <Resource Include="images\facebook.ico" />
+    <Resource Include="images\instagram.ico" />
+    <Resource Include="images\linkedin.ico" />
+    <Resource Include="images\myprofilepic.jpg" />
+    <Resource Include="images\twitter.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
