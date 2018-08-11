@@ -33,7 +33,7 @@ namespace Address_book
 
             // adding two example to see how the format fits.
             contacts.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
-            contacts.Add(new Contact() { Id = 2, FirstName = "Valentino", LastName = "Skobljanec", Residence = "Kukuljanovo", BirthPlace = "Rijeka", Gender = "Male", PhoneNumber = 385953928381, Email = "vskobljanec@gmail.com", SocialNetworkId = "vale_n_tino92", Type = "Instagram", Birthday = new DateTime(1992, 9, 7) });
+            contacts.Add(new Contact() { Id = 2, FirstName = "Ivica", LastName = "Ivić", Residence = "Velika Gorica", BirthPlace = "Osijek", Gender = "Male", PhoneNumber = 385952438719, Email = "iivic@gmail.com", SocialNetworkId = "ivica_ribica", Type = "Facebook", Birthday = new DateTime(1995, 6, 3) });
         
             dbContacts.ItemsSource = contacts;
 
