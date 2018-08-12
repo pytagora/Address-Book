@@ -1,12 +1,12 @@
-# Address-book
-*Address-Book* is a WPF application developed in VS2017 for every PC user. It is a very simple Desktop App for storing contacts. This App presents my introduction to programming WPF applications. Additionally, it is my first experience of developing projects using modern and sophisticated methods and techniques.
+# Address book
+*Address book* is a WPF application developed in VS2017 for every PC user. It present a Desktop App for storing contacts. This App is my introduction to programming WPF applications. Additionally, it is my first experience of developing projects using modern and sophisticated methods and techniques.
  
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](![AppVeyor](https://img.shields.io/appveyor/ci/pytagora/Address-book.svg))
 [![GitHub license](https://img.shields.io/github/license/pytagora/Address-book.svg)](https://github.com/pytagora/Address-book/blob/master/LICENSE.md)
 
 ## About
-The idea is to learn and get necessary programming experience through developing, building and deploying the stable release of the software. Software has two windows. The main window contains all the necessary data in the shape of a table. An additional window is opened by clicking the button **Add** which purpose is to add new contact to the table.
+The idea is to learn and get necessary programming experience through developing, building and deploying the stable release of the software. Software has two windows. The main window contains all the necessary data in the shape of a table. An additional window is opened by clicking the button **Add Contact** which purpose is to add new contact to the table.
 
 ### In progress:
 - Comment section has its limitations. Should make flexible size for input.
@@ -17,16 +17,24 @@ The idea is to learn and get necessary programming experience through developing
 - There still isn't made a decision which data is mandatory and which is elective.
 
 ### Future ideas:
-- *Email* and *Social Network Id* as a hyperlink.
-- Information form for *user* himself.
-- *Residence* place connected to Google Maps.
+- Hyperlink *Email* and *Social Network Id*.
+- *User* Information form.
+- Connect *Residence* place to Google Maps.
 
 ### Additional feature:
-- *Loading photo* for each new contact in the AddNewContact window.
-- *Music Player* in the top left corner of MainWindow.
+- *Load photo* for new contact in the AddNewContact window.
+- *Play audio* in the top left corner of MainWindow.
 
-Below you can see the current state of the software. Two contacts which data you can see are loaded manually using Code behind method not UI solution.
-![Current look of the application](https://raw.githubusercontent.com/pytagora/Address-Book/master/projects/view/images/Demo_App.jpg)
+Below you can see the current state of the software. Two contacts which data you can see are loaded manually to temporary solution.
+![Current look of the application](https://raw.githubusercontent.com/pytagora/Address-Book/master/projects/view/images/demo.jpg)
+
+## Development:
+Idea is to develop an application using an approach of a professional developer and get valuable experience. Modern application need to have architectural pattern so to follow that example *Address book* has **MVVM** (Model-view-viewmodel) software architectural pattern. **MVVM** gives us opportunity to separate development of GUI (Graphical User Interface), business logic and back-end logic (the data model). Additionally, it is very useful if you are planning to unit test your application. Repository cointains three main projects: View, Model and ViewModel which cointains associated files according to MVVM rules. Purpose of the fourth project SampleConsoleApplication is to test is Model project fully developed and does the back-end solution works according to plan.
+
+## Conventions:
+This application is developed under the following standards:
+- [C# coding standards and naming conventions](https://www.dofactory.com/reference/csharp-coding-standards).
+- [Udacity Git commit message style guide](http://udacity.github.io/git-styleguide/).
 
 ## Release Notes
 Below is a summary of major changes.
@@ -40,9 +48,9 @@ Below is a summary of major changes.
 - Code behind buttons done only partially.
 - Background photo as template for both windows.
 - Multiple data type input possible.
-- Loading photo for new contact.
-- Fixed size for both windows.
+- Load photo for new contact.
+- Fix size for both windows.
 - Style for buttons, table and etc. (In progress...)
 
 # License
-*Address-Book* is lincensed under the [GNU GPLv3.0 license](https://github.com/pytagora/Address-book/blob/master/LICENSE.md).
+*Address-Book* is licensed under the [GNU GPLv3.0 license](https://github.com/pytagora/Address-book/blob/master/LICENSE.md).
