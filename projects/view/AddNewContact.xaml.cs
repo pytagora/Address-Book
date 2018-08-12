@@ -49,12 +49,10 @@ namespace View
             }
         }
 
-        // This method should add data into database.
-        // Nothing done.
         // Main method of the app.
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Contact contact = new Contact
+            /*Contact contact = new Contact
             {
                 FirstName = firstName.Text,
                 LastName = lastName.Text,
@@ -67,43 +65,13 @@ namespace View
             };
             string newJson = Newtonsoft.Json.JsonConvert.SerializeObject(contact);
             MessageBox.Show(newJson);
-            Close();
+            Close();*/
         }
 
         // Closing button which works!
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        // Definition of contact class
-        public class Contact
-        {
-            public int Id { get; set; }
-
-            public string FirstName { get; set; }
-
-            public string LastName { get; set; }
-
-            public string BirthPlace { get; set; }
-
-            public DateTime Birthday { get; set; }
-
-            public string Gender { get; set; }
-
-            public string Residence { get; set; }
-
-            public string Email { get; set; }
-
-            public long PhoneNumber { get; set; }
-
-            public string SocialNetworkId { get; set; }
-
-            public string Type { get; set; }
-
-            public ImageSource Image { get; set; }
-
-            public string Comment { get; set; }
         }
     }
 }

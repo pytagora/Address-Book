@@ -52,10 +52,10 @@
                 <DataGridTextColumn Header="Place of birth" Binding="{Binding BirthPlace}"/>
                 <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday}" />
                 <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
-                <DataGridTextColumn Header="Residence" Binding="{Binding Residence}"/>
-                <DataGridTextColumn Header="Phone number" Binding="{Binding PhoneNumber}" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number}" />
                 <DataGridTextColumn Header="E-mail" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Social Network ID" Binding="{Binding SocialNetworkId}"/>
+                <DataGridTextColumn Header="Social Account" Binding="{Binding SocialAccount}"/>
                 <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
                 <DataGridTextColumn Header="Comment" Binding="{Binding Comment}"/>
                 <DataGridTemplateColumn Header="Image" Width="Auto"/>

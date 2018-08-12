@@ -17,9 +17,9 @@ The idea is to learn and get necessary programming experience through developing
 - There still isn't made a decision which data is mandatory and which is elective.
 
 ### Future ideas:
-- Hyperlink *Email* and *Social Network Id*.
+- Hyperlink *Email* and *Social Account*.
 - *User* Information form.
-- Connect *Residence* place to Google Maps.
+- Connect *Address* to Google Maps.
 
 ### Additional feature:
 - *Load photo* for new contact in the AddNewContact window.
