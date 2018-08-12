@@ -29,7 +29,7 @@ namespace Model
 
         public Contact(string name, Email email)
         {
-            this.Name = name;
+            FirstName = name;
             emails = new List<Email>();
             numbers = new List<Number>();
             addresses = new List<Address>();
