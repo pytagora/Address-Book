@@ -1,41 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using Microsoft.Win32;
 
-
-namespace Address_book
+namespace View
 {
-    /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MyAddressBook : Window
     {
 
-        List<Contact> contacts = new List<Contact>();
+        // List<Contact> contacts = new List<Contact>();
         private MediaPlayer mediaPlayer = new MediaPlayer();
         public MyAddressBook()
         {
             InitializeComponent();
 
             // adding two example to see how the format fits.
-            contacts.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
-            contacts.Add(new Contact() { Id = 2, FirstName = "Ivica", LastName = "Ivić", Residence = "Velika Gorica", BirthPlace = "Osijek", Gender = "Male", PhoneNumber = 385952438719, Email = "iivic@gmail.com", SocialNetworkId = "ivica_ribica", Type = "Facebook", Birthday = new DateTime(1995, 6, 3) });
+            // contacts.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", PhoneNumber = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
+            // contacts.Add(new Contact() { Id = 2, FirstName = "Ivica", LastName = "Ivić", Residence = "Velika Gorica", BirthPlace = "Osijek", Gender = "Male", PhoneNumber = 385952438719, Email = "iivic@gmail.com", SocialNetworkId = "ivica_ribica", Type = "Facebook", Birthday = new DateTime(1995, 6, 3) });
         
-            dbContacts.ItemsSource = contacts;
+            // dbContacts.ItemsSource = contacts;
 
             DispatcherTimer Timer = new DispatcherTimer
             {
@@ -117,35 +104,6 @@ namespace Address_book
         private void BtnDeleteContact_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        // Definition of contact class
-        public class Contact
-        {
-            public int Id { get; set; }
-
-            public string FirstName { get; set; }
-
-            public string LastName { get; set; }
-
-            public string BirthPlace { get; set; }
-
-            public DateTime Birthday { get; set; }
-
-            public string Gender { get; set; }
-
-            public string Residence { get; set; }
-
-            public string Email { get; set; }
-
-            public long PhoneNumber { get; set; }
-
-            public string SocialNetworkId { get; set; }
-
-            public string Type { get; set; }
-
-            public string Image { get; set; }
-
-            public string Comment { get; set; }
         }
     }
 }

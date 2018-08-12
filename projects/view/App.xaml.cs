@@ -6,19 +6,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Newtonsoft.Json;
-using static Address_book.MyAddressBook;
+using static View.MyAddressBook;
 
-namespace Address_book
+namespace View
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    // Interaction logic for App.xaml
     public partial class App : Application
     {
-        // Implementing data structure for table.
-        // In progress...
-
-        List<Contact> contacts = new List<Contact>();
 
     }
 }

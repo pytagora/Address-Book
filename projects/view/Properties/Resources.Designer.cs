@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Address_book.Properties
+namespace View.Properties
 {
 
 

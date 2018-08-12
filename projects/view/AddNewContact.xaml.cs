@@ -11,9 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using static Address_book.MyAddressBook;
+using static View.MyAddressBook;
 
-namespace Address_book
+namespace View
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
