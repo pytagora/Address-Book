@@ -11,10 +11,15 @@ namespace Model
         private readonly List<Address> addresses = null;
         private readonly List<SocialAccount> socialAccounts = null;
         Image imageName;
+        private string firstName;
 
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
 
         public string LastName { get; set; }
 

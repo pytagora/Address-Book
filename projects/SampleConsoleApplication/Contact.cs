@@ -10,10 +10,16 @@ namespace Model
         private readonly List<Number> numbers = null;
         private readonly List<Address> addresses = null;
         private readonly List<SocialAccount> socialAccounts = null;
+        Image imageName;
+        private string firstName;
 
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
 
         public string LastName { get; set; }
 
@@ -23,19 +29,46 @@ namespace Model
 
         public string Gender { get; set; }
 
-        public string Image { get; set; }
-
         public string Comment { get; set; }
 
         public Contact(string name, Email email)
         {
-            this.Name = name;
+            FirstName = name;
             emails = new List<Email>();
             numbers = new List<Number>();
             addresses = new List<Address>();
             socialAccounts = new List<SocialAccount>();
 
             this.AddEmail(email);
+        }
+
+        public void AddImage(Image image)
+        {
+            imageName = image;
+        }
+        public void Remove(Image image)
+        {
+            imageName = null;
+        }
+        public void Change(Image image)
+        {
+            imageName = image;
+        }
+        public class Image
+        {
+            private string imageName = string.Empty;
+
+            public Image(string name)
+            {
+                imageName = name;
+            }
+
+            public string Name
+            {
+                get { return imageName; }
+
+                set { imageName = value; }
+            }
         }
 
         public void AddEmail(Email email)
