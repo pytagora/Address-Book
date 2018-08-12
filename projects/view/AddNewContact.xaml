@@ -52,7 +52,7 @@
         <TextBox Grid.Row="5" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" />
         <Label  FontWeight="Bold" Grid.Row="6">Number:</Label>
         <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" />
-        <Label  FontWeight="Bold" Grid.Row="7">E-mail:</Label>
+        <Label  FontWeight="Bold" Grid.Row="7">Email:</Label>
         <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" Name="email"/>
         <Label  FontWeight="Bold" Grid.Row="8">Social Account:</Label>
         <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
