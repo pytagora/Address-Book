@@ -6,20 +6,15 @@ namespace Model
     public class Contact
     {
         private readonly string Name = string.Empty;
-        private readonly List<Email> emails = null;
-        private readonly List<Number> numbers = null;
-        private readonly List<Address> addresses = null;
-        private readonly List<SocialAccount> socialAccounts = null;
+        public List<Email> emails = null;
+        public List<Number> numbers = null;
+        public List<Address> addresses = null;
+        public List<SocialAccount> socialAccounts = null;
         Image imageName;
-        private string firstName;
 
         public int Id { get; set; }
 
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
@@ -30,6 +25,14 @@ namespace Model
         public string Gender { get; set; }
 
         public string Comment { get; set; }
+
+        public Contact()
+        {
+            emails = new List<Email>();
+            numbers = new List<Number>();
+            addresses = new List<Address>();
+            socialAccounts = new List<SocialAccount>();
+        }
 
         public Contact(string name, Email email)
         {
@@ -85,7 +88,7 @@ namespace Model
         }
         public class Email
         {
-            private string emailName = string.Empty;
+            public string emailName = string.Empty;
 
             public Email(string name)
             {
