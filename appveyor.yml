@@ -5,4 +5,6 @@ cache:
     - packages -> ''\packages.config
 before_build: nuget restore
 build:
+    project: C:\Users\Valentino\Desktop\pytagora\Address-book\projects\Address book.sln
     parallel: true
+    verbosity: normal
