@@ -20,7 +20,7 @@ namespace Model
 
         public string BirthPlace { get; set; }
 
-        public DateTime Birthday { get; set; }
+        public DateTime BirthDay { get; set; }
 
         public string Gender { get; set; }
 
