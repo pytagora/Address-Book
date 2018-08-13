@@ -117,7 +117,7 @@ namespace Model
         }
         public class Number
         {
-            private string numberName = string.Empty;
+            public string numberName = string.Empty;
 
             public Number(string name)
             {
@@ -145,7 +145,7 @@ namespace Model
         }
         public class Address
         {
-            private string addressName = string.Empty;
+            public string addressName = string.Empty;
 
             public Address(string name)
             {
@@ -173,7 +173,7 @@ namespace Model
         }
         public class SocialAccount
         {
-            private string socialAccountName = string.Empty;
+            public string socialAccountName = string.Empty;
 
             public SocialAccount(string name)
             {

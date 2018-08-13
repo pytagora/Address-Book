@@ -43,10 +43,43 @@ namespace Model
             while(key == 'A' || key == 'a')
             {
                 Console.WriteLine("\nEnter contact's new email: ");
-                string stringEmail = Console.ReadLine();
-                Email email = new Email(stringEmail);
+                string tmpEmail = Console.ReadLine();
+                Email email = new Email(tmpEmail);
                 contact.AddEmail(email);
-                Console.WriteLine("To add another contact's email press 'A': ");
+                Console.WriteLine("\nTo add another contact's email press 'A': ");
+                key = Console.ReadKey().KeyChar;
+            }
+            Console.WriteLine("\nTo add contact's address press key 'A': ");
+            key = Console.ReadKey().KeyChar;
+            if (key == 'A' || key == 'a')
+            {
+                Console.WriteLine("\nEnter contact's new address: ");
+                string tmpAddress = Console.ReadLine();
+                Address address = new Address(tmpAddress);
+                contact.AddAddress(address);
+                Console.WriteLine("\nTo add another contact's address press key 'A': ");
+                key = Console.ReadKey().KeyChar;
+            }
+            Console.WriteLine("\nTo add contact's number press key 'A': ");
+            key = Console.ReadKey().KeyChar;
+            if (key == 'A' || key == 'a')
+            {
+                Console.WriteLine("\nEnter contact's new number: ");
+                string tmpNumber = Console.ReadLine();
+                Number number = new Number(tmpNumber);
+                contact.AddNumber(number);
+                Console.WriteLine("\nTo add another contact's number press key 'A': ");
+                key = Console.ReadKey().KeyChar;
+            }
+            Console.WriteLine("\nTo add contact's social account press key 'A': ");
+            key = Console.ReadKey().KeyChar;
+            if (key == 'A' || key == 'a')
+            {
+                Console.WriteLine("\nEnter contact's new social account");
+                string stringSocialAccount = Console.ReadLine();
+                SocialAccount socialAccount = new SocialAccount(stringSocialAccount);
+                contact.AddSocialAccount(socialAccount);
+                Console.WriteLine("\nTo add another contact's social account press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
             Console.WriteLine("\nTo add comment for contact press key 'A': ");
@@ -56,7 +89,7 @@ namespace Model
                 Console.WriteLine("\nEnter comment for the contact: ");
                 contact.Comment = Console.ReadLine();
             }
-            Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' and comment '{5}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].Name, contact.BirthPlace, contact.BirthDay, contact.Gender, contact.Comment);
+            Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].Name, contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Name, contact.socialAccounts[0].Name , contact.Comment);
             Console.WriteLine("\nProcess done. Press any key to exit.");
             Console.ReadKey();
             return;
