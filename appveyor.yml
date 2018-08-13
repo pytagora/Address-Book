@@ -1,0 +1,6 @@
+version: 1.0.2-{build}
+image: Visual Studio 2017
+configuration: Release
+cache:
+    - packages -> ''\packages.config
+before_build: nuget restore
