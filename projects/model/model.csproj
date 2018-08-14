@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
+    <Compile Include="Contact.Address.cs" />
+    <Compile Include="Contact.Email.cs" />
+    <Compile Include="Contact.Number.cs" />
+    <Compile Include="Contact.SocialAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

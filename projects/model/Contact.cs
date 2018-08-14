@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Model
 {
-    public class Contact
+    public partial class Contact
     {
         private readonly string Name = string.Empty;
         private List<Email> emails = null;
@@ -32,7 +32,6 @@ namespace Model
             addresses = new List<Address>();
             socialAccounts = new List<SocialAccount>();
         }
-
         public Contact(string name, Email email)
         {
             FirstName = name;
@@ -55,15 +54,6 @@ namespace Model
         {
             emails[i] = email;
         }
-        public class Email
-        {
-            public string Address { get; set; }
-            public Email(string address)
-            {
-                Address = address;
-            }
-        }
-        
         public void AddNumber(Number number)
         {
             numbers.Add(number);
@@ -75,14 +65,6 @@ namespace Model
         public void ChangeNumber(Number number, int i)
         {
             numbers[i] = number;
-        }
-        public class Number
-        {
-            public string Id { get; set; }
-            public Number(string number)
-            {
-                Id = number;
-            }
         }
         public void AddAddress(Address address)
         {
@@ -96,14 +78,6 @@ namespace Model
         {
             addresses[i] = address;
         }
-        public class Address
-        {
-            public string address { get; set; }
-            public Address(string name)
-            {
-                address = name;
-            }
-        }
         public void AddSocialAccount(SocialAccount socialAccount)
         {
             socialAccounts.Add(socialAccount);
@@ -115,14 +89,6 @@ namespace Model
         public void ChangeSocialAccount(SocialAccount socialAccount, int i)
         {
             socialAccounts[i] = socialAccount;
-        }
-        public class SocialAccount
-        {
-            public string Id { get; set; }
-            public SocialAccount(string id)
-            {
-                Id = id;
-            }
         }
     }
 }
