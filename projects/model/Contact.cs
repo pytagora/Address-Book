@@ -7,8 +7,8 @@ namespace Model
     {
         private readonly string Name = string.Empty;
         private List<Email> emails = null;
-        private List<Number> numbers = null;
-        private List<Address> addresses = null;
+        private List<Phone> numbers = null;
+        private List<Residence> addresses = null;
         private List<SocialAccount> socialAccounts = null;
 
         public int Id { get; set; }
@@ -28,21 +28,21 @@ namespace Model
         public Contact()
         {
             emails = new List<Email>();
-            numbers = new List<Number>();
-            addresses = new List<Address>();
+            numbers = new List<Phone>();
+            addresses = new List<Residence>();
             socialAccounts = new List<SocialAccount>();
         }
         public Contact(string name, Email email)
         {
             FirstName = name;
             emails = new List<Email>();
-            numbers = new List<Number>();
-            addresses = new List<Address>();
+            numbers = new List<Phone>();
+            addresses = new List<Residence>();
             socialAccounts = new List<SocialAccount>();
 
-            this.AddEmail(email);
+            //this.AddEmail(email);
         }
-        public void AddEmail(Email email)
+        /*public void AddEmail(Email email)
         {
             emails.Add(email);
         }
@@ -89,6 +89,6 @@ namespace Model
         public void ChangeSocialAccount(SocialAccount socialAccount, int i)
         {
             socialAccounts[i] = socialAccount;
-        }
+        }*/
     }
 }

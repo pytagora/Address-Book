@@ -5,47 +5,47 @@ namespace Model
 {
     public partial class Contact
     {
-        public class Email
+        public class Phone
         {
-            public string Address { get; set; }
-            public Email(string address)
+            public string Number { get; set; }
+            public Phone(string number)
             {
-                Address = address;
+                Number = number;
             }
         }
-        public class Emails : IEnumerable
+        public class Phones : IEnumerable
         {
-            private Email[] emails;
-            public Emails(Email[] emailArray)
+            private Phone[] phones;
+            public Phones(Phone[] phoneArray)
             {
-                int emailArrayLength = emailArray.Length;
-                emails = new Email[emailArrayLength];
-                for (int i = 0; i < emailArrayLength; ++i)
+                int phoneArrayLength = phoneArray.Length;
+                phones = new Phone[phoneArrayLength];
+                for (int i = 0; i < phoneArrayLength; ++i)
                 {
-                    emails[i] = emailArray[i];
+                    phones[i] = phoneArray[i];
                 }
             }
             IEnumerator IEnumerable.GetEnumerator()
             {
                 return (IEnumerator) GetEnumerator();
             }
-            public EmailsEnum GetEnumerator()
+            public PhonesEnum GetEnumerator()
             {
-                return new EmailsEnum(emails);
+                return new PhonesEnum(phones);
             }
         }
-        public class EmailsEnum : IEnumerator
+        public class PhonesEnum : IEnumerator
         {
-            public Email[] emails;
+            public Phone[] phones;
             int position = -1;
-            public EmailsEnum(Email[] list)
+            public PhonesEnum(Phone[] list)
             {
-                emails = list;
+                phones = list;
             }
             public bool MoveNext()
             {
                 ++position;
-                return (position < emails.Length);
+                return (position < phones.Length);
             }
             public void Reset()
             {
@@ -58,13 +58,13 @@ namespace Model
                     return Current;
                 }
             }
-            public Email Current
+            public Phone Current
             {
                 get
                 {
                     try
                     {
-                        return emails[position];
+                        return phones[position];
                     }
                     catch (IndexOutOfRangeException)
                     {

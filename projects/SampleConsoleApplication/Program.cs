@@ -45,7 +45,7 @@ namespace Model
                 Console.WriteLine("\nEnter contact's new email: ");
                 string tmpEmail = Console.ReadLine();
                 Email email = new Email(tmpEmail);
-                contact.AddEmail(email);
+                //contact.AddEmail(email);
                 Console.WriteLine("\nTo add another contact's email press 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
@@ -55,8 +55,8 @@ namespace Model
             {
                 Console.WriteLine("\nEnter contact's new address: ");
                 string tmpAddress = Console.ReadLine();
-                Address address = new Address(tmpAddress);
-                contact.AddAddress(address);
+                Residence address = new Residence(tmpAddress);
+                //contact.AddAddress(address);
                 Console.WriteLine("\nTo add another contact's address press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
@@ -66,8 +66,8 @@ namespace Model
             {
                 Console.WriteLine("\nEnter contact's new number: ");
                 string tmpNumber = Console.ReadLine();
-                Number number = new Number(tmpNumber);
-                contact.AddNumber(number);
+                Phone number = new Phone(tmpNumber);
+                //contact.AddNumber(number);
                 Console.WriteLine("\nTo add another contact's number press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
@@ -78,7 +78,7 @@ namespace Model
                 Console.WriteLine("\nEnter contact's new social account");
                 string stringSocialAccount = Console.ReadLine();
                 SocialAccount socialAccount = new SocialAccount(stringSocialAccount);
-                contact.AddSocialAccount(socialAccount);
+                //contact.AddSocialAccount(socialAccount);
                 Console.WriteLine("\nTo add another contact's social account press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
