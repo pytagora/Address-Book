@@ -10,7 +10,6 @@ namespace Model
         public List<Number> numbers = null;
         public List<Address> addresses = null;
         public List<SocialAccount> socialAccounts = null;
-        Image imageName;
 
         public int Id { get; set; }
 
@@ -44,36 +43,6 @@ namespace Model
 
             this.AddEmail(email);
         }
-
-        public void AddImage(Image image)
-        {
-            imageName = image;
-        }
-        public void Remove(Image image)
-        {
-            imageName = null;
-        }
-        public void Change(Image image)
-        {
-            imageName = image;
-        }
-        public class Image
-        {
-            private string imageName = string.Empty;
-
-            public Image(string name)
-            {
-                imageName = name;
-            }
-
-            public string Name
-            {
-                get { return imageName; }
-
-                set { imageName = value; }
-            }
-        }
-
         public void AddEmail(Email email)
         {
             emails.Add(email);
@@ -117,18 +86,17 @@ namespace Model
         }
         public class Number
         {
-            public string numberName = string.Empty;
-
+            public string numberId = string.Empty;
             public Number(string name)
             {
-                numberName = name;
+                numberId = name;
             }
 
-            public string Name
+            public string Id
             {
-                get { return numberName; }
+                get { return numberId; }
 
-                set { numberName = value; }
+                set { numberId = value; }
             }
         }
         public void AddAddress(Address address)

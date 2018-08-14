@@ -89,7 +89,7 @@ namespace Model
                 Console.WriteLine("\nEnter comment for the contact: ");
                 contact.Comment = Console.ReadLine();
             }
-            Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].Name, contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Name, contact.socialAccounts[0].Name , contact.Comment);
+            Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' with social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].Name, contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Id, contact.socialAccounts[0].Name , contact.Comment);
             Console.WriteLine("\nProcess done. Press any key to exit.");
             Console.ReadKey();
             return;

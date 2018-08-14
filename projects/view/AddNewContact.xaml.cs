@@ -15,9 +15,7 @@ using static View.MyAddressBook;
 
 namespace View
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
+    /// Interaction logic for AddNewContact.xaml
     public partial class AddNewContact : Window
     {
         // Window for new contact form
@@ -26,8 +24,8 @@ namespace View
            InitializeComponent();
         }
 
-        // Method for adding contacts photo to database.
-        private void BtnAddNewImage_Click(object sender, RoutedEventArgs e)
+        // Add contact's photo.
+        /*private void BtnAddNewImage_Click(object sender, RoutedEventArgs e)
         {
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
@@ -47,7 +45,7 @@ namespace View
                 LoadPhoto.Source = new BitmapImage(new Uri(dlg.FileName));
                 photo.Text = dlg.FileName;
             }
-        }
+        }*/
 
         // Main method of the app.
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
@@ -61,14 +59,13 @@ namespace View
                 //Gender = gender,
                 Email = email.Text,
                 Comment = comment.Text,
-                Image = LoadPhoto.Source,
             };
             string newJson = Newtonsoft.Json.JsonConvert.SerializeObject(contact);
             MessageBox.Show(newJson);
             Close();*/
         }
 
-        // Closing button which works!
+        // Close window.
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();

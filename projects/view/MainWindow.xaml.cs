@@ -95,7 +95,7 @@ namespace View
             }
         }
 
-        // Trying to find a proper method for selecting single row.
+        // Try to find a proper method for selecting single row.
         private void BtnChangeContact_Click(object sender, RoutedEventArgs e)
         {
 
