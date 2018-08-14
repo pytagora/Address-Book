@@ -22,7 +22,7 @@ namespace Model
                 Console.WriteLine("\nEnter contact's birthplace: ");
                 contact.BirthPlace = Console.ReadLine();
             }
-            Console.WriteLine("To add contact's birthday press key 'A': ");
+            Console.WriteLine("\nTo add contact's birthday press key 'A': ");
             key = Console.ReadKey().KeyChar;
             if (key == 'A' || key == 'a')
             {
@@ -89,7 +89,9 @@ namespace Model
                 Console.WriteLine("\nEnter comment for the contact: ");
                 contact.Comment = Console.ReadLine();
             }
-            Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' with social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].Name, contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Id, contact.socialAccounts[0].Name , contact.Comment);
+            //Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' with social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].ToString(), contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Id, contact.socialAccounts[0].Name , contact.Comment);
+            var mejl = contact.emails[0].Address;
+            Console.WriteLine("mejl je '{0}'", mejl);
             Console.WriteLine("\nProcess done. Press any key to exit.");
             Console.ReadKey();
             return;

@@ -57,18 +57,10 @@ namespace Model
         }
         public class Email
         {
-            public string emailName = string.Empty;
-
-            public Email(string name)
+            public string Address { get; set; }
+            public Email(string address)
             {
-                emailName = name;
-            }
-
-            public string Name
-            {
-                get { return emailName; }
-
-                set { emailName = value; }
+                Address = address;
             }
         }
         
@@ -86,17 +78,10 @@ namespace Model
         }
         public class Number
         {
-            public string numberId = string.Empty;
-            public Number(string name)
+            public string Id { get; set; }
+            public Number(string number)
             {
-                numberId = name;
-            }
-
-            public string Id
-            {
-                get { return numberId; }
-
-                set { numberId = value; }
+                Id = number;
             }
         }
         public void AddAddress(Address address)
@@ -113,18 +98,10 @@ namespace Model
         }
         public class Address
         {
-            public string addressName = string.Empty;
-
+            public string address { get; set; }
             public Address(string name)
             {
-                addressName = name;
-            }
-
-            public string Name
-            {
-                get { return addressName; }
-
-                set { addressName = value; }
+                address = name;
             }
         }
         public void AddSocialAccount(SocialAccount socialAccount)
@@ -141,18 +118,10 @@ namespace Model
         }
         public class SocialAccount
         {
-            public string socialAccountName = string.Empty;
-
-            public SocialAccount(string name)
+            public string Id { get; set; }
+            public SocialAccount(string id)
             {
-                socialAccountName = name;
-            }
-
-            public string Name
-            {
-                get { return socialAccountName;  }
-
-                set { socialAccountName = value; }
+                Id = id;
             }
         }
     }
