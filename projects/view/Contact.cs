@@ -6,10 +6,10 @@ namespace Model
     public class Contact
     {
         private readonly string Name = string.Empty;
-        public List<Email> emails = null;
-        public List<Number> numbers = null;
-        public List<Address> addresses = null;
-        public List<SocialAccount> socialAccounts = null;
+        private List<Email> emails = null;
+        private List<Number> numbers = null;
+        private List<Address> addresses = null;
+        private List<SocialAccount> socialAccounts = null;
 
         public int Id { get; set; }
 
