@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace Model
 {
@@ -7,10 +7,43 @@ namespace Model
     {
         public class Phone
         {
-            public string Number { get; set; }
-            public Phone(string number)
+            public string number;
+            private string type;
+            public Phone()
             {
-                Number = number;
+
+            }
+            public string Number
+            {
+                get
+                {
+                    return number;
+                }
+                set
+                {
+                    if (Regex.IsMatch(value, @"^d+$"))
+                    {
+                        number = value;
+                    }
+                    else
+                        throw new InvalidOperationException;
+                }
+            }
+            public string Type
+            {
+                get
+                {
+                    return type;
+                }
+                set
+                {
+                    if (value.Length > 1 && value.Length < 20 && value.IsNormalized())
+                    {
+                        type = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
+                }
             }
         }
     }
