@@ -1,5 +1,8 @@
 ﻿using System;
 using static Model.Contact;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
+using System.Web.Script.Serialization;
 
 namespace Model
 {
@@ -7,7 +10,7 @@ namespace Model
     {
         static void Main(string[] args)
         {
-            Contact contact = new Contact();
+            /*Contact contact = new Contact();
             Console.WriteLine("\t***Welcome to my console application!!!***");
             Console.WriteLine("\n\n\t\tADDRESS BOOK");
             Console.WriteLine("\n\nCONTACT FORM: ");
@@ -99,7 +102,20 @@ namespace Model
             //string prezime = "pytagora";
             //var hyperlink = "https://www." + ime + ".com/" + prezime;
             Console.WriteLine("social account id is '{0}', social network is '{1}' and hyperlink is '{2}'", socialAccount.ID, socialAccount.SocialNetwork, socialAccount.Hyperlink);
-            Console.WriteLine("\nProcess done. Press any key to exit.");
+            Console.WriteLine("\nProcess done. Press any key to exit.");*/
+            Contact contact = new Contact();
+            contact.FirstName = "Valentino";
+            contact.LastName = "Skobljanec";
+            contact.Gender = "Male";
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Converters.Add(new JavaScriptDateTimeConverter());
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+
+            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt"))
+            using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
+            {
+                serializer.Serialize(jsonWriter, contact);
+            }
             Console.ReadKey();
             return;
         }
