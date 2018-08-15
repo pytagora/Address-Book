@@ -1,63 +1,64 @@
 ﻿using System;
-using System.Collections;
 
 namespace Model
 {
     public partial class Contact
     {
-        public class SocialAccount
+        public partial class Residence
         {
-            private string id;
-            private string socialNetwork;
-            private string hyperlink = "";
-            public SocialAccount()
+            private string cityName = "";
+            private int cityZIP = 0;
+            private string cityCountry = "";
+            public class City
             {
 
             }
-            public string ID
+            public string CityName
             {
                 get
                 {
-                    return id;
+                    return cityName;
                 }
                 set
                 {
-                    if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
+                    if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                     {
-                        id = value;
+                        cityName= value;
                     }
                     else
                         throw new InvalidOperationException();
                 }
             }
-            public string SocialNetwork
+            public int CityZIP
             {
                 get
                 {
-                    return socialNetwork;
+                    return cityZIP;
                 }
                 set
                 {
-                    if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
+                    if (value > 0 && value < 20000)
                     {
-                        socialNetwork = value;
+                        cityZIP = value;
                     }
                     else
                         throw new InvalidOperationException();
                 }
             }
-            public string Hyperlink
+            public string CityCountry
             {
                 get
                 {
-                    return hyperlink;
+                    return cityCountry;
                 }
                 set
                 {
-                    if (id != "" && socialNetwork != "")
+                    if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                     {
-                        hyperlink = "https://www." + socialNetwork + ".com/" + id;
+                        cityCountry = value;
                     }
+                    else
+                        throw new InvalidOperationException();
                 }
             }
         }

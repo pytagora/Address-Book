@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
+    <Compile Include="Contact.Residence.City.cs" />
     <Compile Include="Contact.Residence.cs" />
     <Compile Include="Contact.Email.cs" />
     <Compile Include="Contact.Phone.cs" />
+    <Compile Include="Contact.Residence.Street.cs" />
     <Compile Include="Contact.SocialAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
