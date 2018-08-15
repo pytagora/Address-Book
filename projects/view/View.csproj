@@ -107,7 +107,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\backphoto.jpg" />
+    <Resource Include="images\background.jpg" />
     <Resource Include="images\facebook.ico" />
     <Resource Include="images\instagram.ico" />
     <Resource Include="images\linkedin.ico" />

@@ -66,8 +66,8 @@ namespace Model
             {
                 Console.WriteLine("\nEnter contact's new number: ");
                 string tmpNumber = Console.ReadLine();
-                Phone number = new Phone(tmpNumber);
-                //contact.AddNumber(number);
+                Phone phone = new Phone(tmpNumber);
+                //contact.AddNumber(phone);
                 Console.WriteLine("\nTo add another contact's number press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
