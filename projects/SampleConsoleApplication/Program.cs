@@ -73,11 +73,13 @@ namespace Model
             }
             Console.WriteLine("\nTo add contact's social account press key 'A': ");
             key = Console.ReadKey().KeyChar;
+            SocialAccount socialAccount = new SocialAccount();
             if (key == 'A' || key == 'a')
             {
-                Console.WriteLine("\nEnter contact's new social account");
-                string stringSocialAccount = Console.ReadLine();
-                SocialAccount socialAccount = new SocialAccount(stringSocialAccount);
+                Console.WriteLine("\nEnter contact's new social account ID: ");
+                socialAccount.ID = Console.ReadLine();
+                Console.WriteLine("\nEnter contact's social network: ");
+                socialAccount.SocialNetwork = Console.ReadLine();
                 //contact.AddSocialAccount(socialAccount);
                 Console.WriteLine("\nTo add another contact's social account press key 'A': ");
                 key = Console.ReadKey().KeyChar;
@@ -92,6 +94,11 @@ namespace Model
             //Console.WriteLine("\nContact with a name '{0}' and email '{1}' birthplace '{2}' and birthday '{3}' gender '{4}' address '{5}' number '{6}' with social network id '{7}' and comment '{8}' created!\n", contact.FirstName + contact.LastName, contact.emails[0].ToString(), contact.BirthPlace, contact.BirthDay, contact.Gender, contact.addresses[0].Name, contact.numbers[0].Id, contact.socialAccounts[0].Name , contact.Comment);
             // var mejl = contact.emails[0].Address;
             // Console.WriteLine("mejl je '{0}'", mejl);
+            socialAccount.Hyperlink = "";
+            //string ime = "facebook";
+            //string prezime = "pytagora";
+            //var hyperlink = "https://www." + ime + ".com/" + prezime;
+            Console.WriteLine("social account id is '{0}', social network is '{1}' and hyperlink is '{2}'", socialAccount.ID, socialAccount.SocialNetwork, socialAccount.Hyperlink);
             Console.WriteLine("\nProcess done. Press any key to exit.");
             Console.ReadKey();
             return;
