@@ -2,7 +2,7 @@
 using static Model.Contact;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using System.Web.Script.Serialization;
+using System.Web;
 
 namespace Model
 {
@@ -107,7 +107,7 @@ namespace Model
             contact.FirstName = "Valentino";
             contact.LastName = "Skobljanec";
             contact.Gender = "Male";
-            JsonSerializer serializer = new JsonSerializer();
+            /*JsonSerializer serializer = new JsonSerializer();
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
 
@@ -115,7 +115,7 @@ namespace Model
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
                 serializer.Serialize(jsonWriter, contact);
-            }
+            }*/
             Console.ReadKey();
             return;
         }
