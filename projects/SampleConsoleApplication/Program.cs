@@ -42,9 +42,9 @@ namespace Model
             key = Console.ReadKey().KeyChar;
             while(key == 'A' || key == 'a')
             {
+                Email email = new Email();
                 Console.WriteLine("\nEnter contact's new email: ");
                 string tmpEmail = Console.ReadLine();
-                Email email = new Email(tmpEmail);
                 //contact.AddEmail(email);
                 Console.WriteLine("\nTo add another contact's email press 'A': ");
                 key = Console.ReadKey().KeyChar;
@@ -55,7 +55,7 @@ namespace Model
             {
                 Console.WriteLine("\nEnter contact's new address: ");
                 string tmpAddress = Console.ReadLine();
-                Residence address = new Residence(tmpAddress);
+                Residence address = new Residence();
                 //contact.AddAddress(address);
                 Console.WriteLine("\nTo add another contact's address press key 'A': ");
                 key = Console.ReadKey().KeyChar;
@@ -66,7 +66,7 @@ namespace Model
             {
                 Console.WriteLine("\nEnter contact's new number: ");
                 string tmpNumber = Console.ReadLine();
-                Phone phone = new Phone(tmpNumber);
+                Phone phone = new Phone();
                 //contact.AddNumber(phone);
                 Console.WriteLine("\nTo add another contact's number press key 'A': ");
                 key = Console.ReadKey().KeyChar;

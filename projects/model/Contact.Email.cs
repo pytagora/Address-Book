@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Net.Mail;
 
 namespace Model
 {
@@ -26,7 +27,7 @@ namespace Model
                         address = value;
                     }
                     else
-                        throw new InvalidOperationException;
+                        throw new InvalidOperationException();
                 }
             }
             public bool IsValidEmail(string email)
@@ -55,6 +56,28 @@ namespace Model
                     }
                     else
                         throw new InvalidOperationException();
+                }
+            }
+            public string SendEmail(string subject, string body, string sender)
+            {
+                if (IsValidEmail(sender))
+                {
+                    MailMessage mailMessage = new MailMessage(sender, Address);
+                    SmtpClient smtpClient = new SmtpClient
+                    {
+                        Port = 25,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Host = "smptp.gmail.com"
+                    };
+                    mailMessage.Subject = subject;
+                    mailMessage.Body = body;
+                    smtpClient.Send(mailMessage);
+                    return "Email have been sent successfully!\n";
+                }
+                else
+                {
+                    return "Sender email is in invalid format!\n";
                 }
             }
         }

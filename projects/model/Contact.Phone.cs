@@ -26,7 +26,7 @@ namespace Model
                         number = value;
                     }
                     else
-                        throw new InvalidOperationException;
+                        throw new InvalidOperationException();
                 }
             }
             public string Type

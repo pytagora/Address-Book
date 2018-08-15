@@ -7,8 +7,8 @@ namespace Model
     {
         private readonly string Name = string.Empty;
         private List<Email> emails = null;
-        private List<Phone> numbers = null;
-        private List<Residence> addresses = null;
+        private List<Phone> phones = null;
+        private List<Residence> residences = null;
         private List<SocialAccount> socialAccounts = null;
 
         public int Id { get; set; }
@@ -28,21 +28,21 @@ namespace Model
         public Contact()
         {
             emails = new List<Email>();
-            numbers = new List<Phone>();
-            addresses = new List<Residence>();
+            phones = new List<Phone>();
+            residences = new List<Residence>();
             socialAccounts = new List<SocialAccount>();
         }
         public Contact(string name, Email email)
         {
             FirstName = name;
             emails = new List<Email>();
-            numbers = new List<Phone>();
-            addresses = new List<Residence>();
+            phones = new List<Phone>();
+            residences = new List<Residence>();
             socialAccounts = new List<SocialAccount>();
 
-            //this.AddEmail(email);
+            this.AddEmail(email);
         }
-        /*public void AddEmail(Email email)
+        public void AddEmail(Email email)
         {
             emails.Add(email);
         }
@@ -54,29 +54,29 @@ namespace Model
         {
             emails[i] = email;
         }
-        public void AddNumber(Number number)
+        public void AddNumber(Phone phone)
         {
-            numbers.Add(number);
+            phones.Add(phone);
         }
-        public void RemoveNumber(Number number)
+        public void RemoveNumber(Phone phone)
         {
-            numbers.Remove(number);
+            phones.Remove(phone);
         }
-        public void ChangeNumber(Number number, int i)
+        public void ChangePhone(Phone phone, int i)
         {
-            numbers[i] = number;
+            phones[i] = phone;
         }
-        public void AddAddress(Address address)
+        public void AddResidence(Residence residence)
         {
-            addresses.Add(address);
+            residences.Add(residence);
         }
-        public void RemoveAddress(Address address)
+        public void RemoveResidence(Residence residence)
         {
-            addresses.Remove(address);
+            residences.Remove(residence);
         }
-        public void ChangeAddress(Address address, int i)
+        public void ChangeResidence(Residence residence, int i)
         {
-            addresses[i] = address;
+            residences[i] = residence;
         }
         public void AddSocialAccount(SocialAccount socialAccount)
         {
@@ -89,6 +89,6 @@ namespace Model
         public void ChangeSocialAccount(SocialAccount socialAccount, int i)
         {
             socialAccounts[i] = socialAccount;
-        }*/
+        }
     }
 }
