@@ -1,8 +1,11 @@
+version: 1.0.2-{build}
+image: Visual Studio 2017
 configuration: Release
-
-before build:
-    - nuget restore
-
+cache:
+    - packages -> ''\packages.config
+before_build: nuget restore
 build:
-    verbosity: minimal
+    project: C:\Users\Valentino\Desktop\pytagora\Address-book
+    parallel: true
+    verbosity: normal
     publish_wap: true

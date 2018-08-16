@@ -116,6 +116,7 @@ namespace Model
             {
                 serializer.Serialize(jsonWriter, contact);
             }*/
+            string v = "";
             Console.ReadKey();
             return;
         }
