@@ -136,12 +136,14 @@ namespace Model
                 serializer.Serialize(jsonWriter, contacts);
             }
             string jsonFile = @"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt";
-            /*dynamic dynamicJson = JsonConvert.DeserializeObject(jsonFile);
-            //var json = File.ReadAllText(jsonFile);
-            //var jObject = JObject.Parse(jsonFile);
-            foreach (var item in dynamicJson)
+            using (StreamReader r = new StreamReader(jsonFile))
             {
-                Console.WriteLine("'{0}' '{1}' '{2}' '{3}'\n", item.FirstName, item.LastName, item.Gender);
+                string json = r.ReadToEnd();
+                List<Contact> writeContacts = JsonConvert.DeserializeObject<List<Contact>>(json);
+                foreach (var item in writeContacts)
+                {
+                    Console.WriteLine("{0} - {1} - {2}",item.FirstName, item.LastName, item.Gender);
+                }
             }
             //Console.WriteLine("First name is :" + jObject["FirstName"].ToString());*/
             Console.ReadKey();
