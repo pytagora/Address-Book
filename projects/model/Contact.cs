@@ -7,10 +7,10 @@ namespace Model
     public partial class Contact
     {
         private readonly string Name = string.Empty;
-        private List<Email> emails = null;
-        private List<Phone> phones = null;
-        private List<Residence> residences = null;
-        private List<SocialAccount> socialAccounts = null;
+        private List<Email> emails = new List<Email>();
+        private List<Phone> phones = new List<Phone>();
+        private List<Residence> residences = new List<Residence>();
+        private List<SocialAccount> socialAccounts = new List<SocialAccount>();
 
         public int Id { get; set; }
 
@@ -20,7 +20,7 @@ namespace Model
 
         public string BirthPlace { get; set; }
 
-        public DateTime BirthDay { get; set; }
+        //public DateTime BirthDay { get; set; }
 
         public string Gender { get; set; }
 

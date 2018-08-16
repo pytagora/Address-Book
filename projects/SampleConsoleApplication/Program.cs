@@ -107,26 +107,23 @@ namespace Model
             //var hyperlink = "https://www." + ime + ".com/" + prezime;
             Console.WriteLine("social account id is '{0}', social network is '{1}' and hyperlink is '{2}'", socialAccount.ID, socialAccount.SocialNetwork, socialAccount.Hyperlink);
             Console.WriteLine("\nProcess done. Press any key to exit.");*/
-            string jsonFile = @"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt";
-            var json = File.ReadAllText(jsonFile);
-            var jObject = JObject.Parse(jsonFile);
-            Console.WriteLine("First name is :" + jObject["FirstName"].ToString());
             List<Contact> contacts = new List<Contact>();
-            /*DateTime date = DateTime.Now;
+            //DateTime date = new DateTime(2017, 12, 1);
             Contact contact = new Contact
             {
                 FirstName = "Valentino",
                 LastName = "Skobljanec",
                 Gender = "Male",
                 BirthPlace = "Rijeka",
-                BirthDay = date
+                // BirthDay = date
             };
             contacts.Add(contact);
             Contact user = new Contact
             {
                 FirstName = "Ivo",
                 LastName = "Ivic",
-                Gender = "Male"
+                Gender = "Male",
+                //BirthDay = date
             };
             contacts.Add(user);
             JsonSerializer serializer = new JsonSerializer();
@@ -136,8 +133,17 @@ namespace Model
             using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt"))
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
-                serializer.Serialize(jsonWriter, contact);
-            }*/
+                serializer.Serialize(jsonWriter, contacts);
+            }
+            string jsonFile = @"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt";
+            /*dynamic dynamicJson = JsonConvert.DeserializeObject(jsonFile);
+            //var json = File.ReadAllText(jsonFile);
+            //var jObject = JObject.Parse(jsonFile);
+            foreach (var item in dynamicJson)
+            {
+                Console.WriteLine("'{0}' '{1}' '{2}' '{3}'\n", item.FirstName, item.LastName, item.Gender);
+            }
+            //Console.WriteLine("First name is :" + jObject["FirstName"].ToString());*/
             Console.ReadKey();
             return;
         }
