@@ -6,6 +6,7 @@ using Newtonsoft.Json.Serialization;
 using System.Web;
 using Newtonsoft.Json.Converters;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -106,10 +107,28 @@ namespace Model
             //var hyperlink = "https://www." + ime + ".com/" + prezime;
             Console.WriteLine("social account id is '{0}', social network is '{1}' and hyperlink is '{2}'", socialAccount.ID, socialAccount.SocialNetwork, socialAccount.Hyperlink);
             Console.WriteLine("\nProcess done. Press any key to exit.");*/
-            Contact contact = new Contact();
-            contact.FirstName = "Valentino";
-            contact.LastName = "Skobljanec";
-            contact.Gender = "Male";
+            string jsonFile = @"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt";
+            var json = File.ReadAllText(jsonFile);
+            var jObject = JObject.Parse(jsonFile);
+            Console.WriteLine("First name is :" + jObject["FirstName"].ToString());
+            List<Contact> contacts = new List<Contact>();
+            /*DateTime date = DateTime.Now;
+            Contact contact = new Contact
+            {
+                FirstName = "Valentino",
+                LastName = "Skobljanec",
+                Gender = "Male",
+                BirthPlace = "Rijeka",
+                BirthDay = date
+            };
+            contacts.Add(contact);
+            Contact user = new Contact
+            {
+                FirstName = "Ivo",
+                LastName = "Ivic",
+                Gender = "Male"
+            };
+            contacts.Add(user);
             JsonSerializer serializer = new JsonSerializer();
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
@@ -118,7 +137,7 @@ namespace Model
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
                 serializer.Serialize(jsonWriter, contact);
-            }
+            }*/
             Console.ReadKey();
             return;
         }
