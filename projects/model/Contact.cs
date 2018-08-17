@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+﻿using System.Collections.Generic;
 
 namespace Model
 {
-    public partial class Contact
+    public class Contact
     {
         private readonly string Name = string.Empty;
         private List<Email> emails = new List<Email>();
@@ -33,9 +31,9 @@ namespace Model
             addreesses = new List<Addreess>();
             socialAccounts = new List<SocialAccount>();
         }
-        public Contact(string name, Email email)
+        public Contact(string firstName, Email email)
         {
-            FirstName = name;
+            FirstName = firstName;
             emails = new List<Email>();
             phones = new List<Phone>();
             addreesses = new List<Addreess>();

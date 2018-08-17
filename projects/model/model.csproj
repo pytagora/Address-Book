@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
-    <Compile Include="Contact.Residence.cs" />
-    <Compile Include="Contact.Email.cs" />
-    <Compile Include="Contact.Phone.cs" />
-    <Compile Include="Contact.SocialAccount.cs" />
+    <Compile Include="Residence.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="SocialAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
