@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92D4EB1E-F9C9-471B-86D0-8841F55A1C1C}</ProjectGuid>
+    <ProjectGuid>{1B21BECB-FFC3-4C36-9E57-24EC93CD66B3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SampleConsoleApplication</RootNamespace>
-    <AssemblyName>SampleConsoleApplication</AssemblyName>
+    <RootNamespace>Experiments</RootNamespace>
+    <AssemblyName>Experiments</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleApp.cs" />
+    <Compile Include="Experiment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -18,7 +19,7 @@ namespace Model
 
         public string BirthPlace { get; set; }
 
-        //public DateTime BirthDay { get; set; }
+        public DateTime BirthDay { get; set; }
 
         public string Gender { get; set; }
 
