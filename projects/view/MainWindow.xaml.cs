@@ -5,11 +5,12 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Win32;
+using MahApps.Metro.Controls;
 
 namespace View
 {
     /// Interaction logic for MainWindow.xaml
-    public partial class MyAddressBook : Window
+    public partial class MyAddressBook : MetroWindow
     {
 
         // List<Contact> contacts = new List<Contact>();

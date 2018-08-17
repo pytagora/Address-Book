@@ -12,11 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static View.MyAddressBook;
+using MahApps.Metro.Controls;
 
 namespace View
 {
     /// Interaction logic for AddNewContact.xaml
-    public partial class AddNewContact : Window
+    public partial class AddNewContact : MetroWindow
     {
         // Window for new contact form
         public AddNewContact()
