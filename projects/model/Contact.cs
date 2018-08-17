@@ -11,7 +11,7 @@ namespace Model
         private List<Phone> phones = new List<Phone>();
         private List<Residence> residences = new List<Residence>();
         private List<SocialAccount> socialAccounts = new List<SocialAccount>();
-        
+
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -54,6 +54,18 @@ namespace Model
         public void ChangeEmail(Email email, int i)
         {
             emails[i] = email;
+        }
+        public IEnumerable<Email> GetEmails()
+        {
+            return emails;
+        }
+        public IEnumerable<Phone> GetPhones()
+        {
+            return phones;
+        }
+        public IEnumerable<SocialAccount> GetSocialAccounts()
+        {
+            return socialAccounts;
         }
         public void AddNumber(Phone phone)
         {

@@ -117,6 +117,19 @@ namespace Model
                 BirthPlace = "Rijeka",
                 // BirthDay = date
             };
+            Email MainEmail = new Email();
+            MainEmail.Address = "vskobljanec@gmail.com";
+            MainEmail.Type = "Home";
+            contact.AddEmail(MainEmail);
+            Email SchoolEmail = new Email();
+            SchoolEmail.Address = "vskobljanec@uniri.hr";
+            SchoolEmail.Type = "School";
+            contact.AddEmail(SchoolEmail);
+            var tmp = contact.GetEmails();
+            foreach (var item in tmp)
+            {
+                Console.WriteLine("{0} - {1}", item.Address, item.Type);
+            }
             contacts.Add(contact);
             Contact user = new Contact
             {
