@@ -1,1 +1,0 @@
-[{"Id":0,"FirstName":"Valentino","LastName":"Skobljanec","BirthPlace":"Rijeka","Gender":"Male"},{"Id":0,"FirstName":"Ivo","LastName":"Ivic","Gender":"Male"}]

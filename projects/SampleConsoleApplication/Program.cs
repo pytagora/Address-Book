@@ -129,13 +129,12 @@ namespace Model
             JsonSerializer serializer = new JsonSerializer();
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;
-
-            using (StreamWriter streamWriter = new StreamWriter(@"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt"))
+            string jsonFile = @"..\\json.txt";
+            using (StreamWriter streamWriter = new StreamWriter(jsonFile))
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
                 serializer.Serialize(jsonWriter, contacts);
             }
-            string jsonFile = @"C:\Users\Valentino\Desktop\pytagora\Address-book\json.txt";
             using (StreamReader r = new StreamReader(jsonFile))
             {
                 string json = r.ReadToEnd();

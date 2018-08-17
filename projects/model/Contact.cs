@@ -11,7 +11,7 @@ namespace Model
         private List<Phone> phones = new List<Phone>();
         private List<Residence> residences = new List<Residence>();
         private List<SocialAccount> socialAccounts = new List<SocialAccount>();
-
+        
         public int Id { get; set; }
 
         public string FirstName { get; set; }
