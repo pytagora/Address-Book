@@ -51,10 +51,6 @@ namespace Model
         {
             emails.Remove(email);
         }
-        public void ChangeEmail(Email email, int i)
-        {
-            emails[i] = email;
-        }
         public IEnumerable<Email> GetEmails()
         {
             return emails;
@@ -75,10 +71,6 @@ namespace Model
         {
             phones.Remove(phone);
         }
-        public void ChangePhone(Phone phone, int i)
-        {
-            phones[i] = phone;
-        }
         public void AddResidence(Residence residence)
         {
             residences.Add(residence);
@@ -87,10 +79,6 @@ namespace Model
         {
             residences.Remove(residence);
         }
-        public void ChangeResidence(Residence residence, int i)
-        {
-            residences[i] = residence;
-        }
         public void AddSocialAccount(SocialAccount socialAccount)
         {
             socialAccounts.Add(socialAccount);
@@ -98,10 +86,6 @@ namespace Model
         public void RemoveSocialAccount(SocialAccount socialAccount)
         {
             socialAccounts.Remove(socialAccount);
-        }
-        public void ChangeSocialAccount(SocialAccount socialAccount, int i)
-        {
-            socialAccounts[i] = socialAccount;
         }
     }
 }
