@@ -5,19 +5,22 @@ namespace Model
 {
     public partial class Contact
     {
-        public partial class Residence
+        public class Addreess
         {
-            public Residence()
+            private string addressName = "";
+            private int addressNumber = 0;
+            private string addressCity = "";
+            private int addressZIP = 0;
+            private string addressCountry = "";
+            public Addreess()
             {
                 
             }
-            public string ResidenceStreet()
+            public string AddressStreet()
             {
-                var streetName = StreetName;
-                var streetNumber = StreetNumber;
-                if (streetName != "" && streetNumber != 0)
+                if (addressName != "" && addressNumber != 0)
                 {
-                    return streetName + streetNumber;
+                    return addressName + addressNumber;
                 }
                 else
                 {
@@ -26,17 +29,94 @@ namespace Model
             }
             public string ResidenceCity()
             {
-                string cityName = CityName;
-                string cityZIP = CityZIP.ToString();
-                string cityCountry = CityCountry;
-                if (cityName != "" && streetNumber != 0 && cityCountry != "")
+                if (addressCity != "" && addressNumber != 0 && addressCountry != "")
                 {
-                    string result = cityZIP + " " + cityName + ", " + cityCountry;
+                    string result = addressZIP + " " + addressCity + ", " + addressCountry;
                     return result;
                 }
                 else
                 {
                     return "Not Defined!";
+                }
+            }
+            public string StreetName
+            {
+                get
+                {
+                    return addressName;
+                }
+                set
+                {
+                    if (value.Length > 4 && value.Length < 35 && value.IsNormalized())
+                    {
+                        addressName = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
+                }
+            }
+            public int StreetNumber
+            {
+                get
+                {
+                    return addressNumber;
+                }
+                set
+                {
+                    if (value > 0 && value < 20000)
+                    {
+                        addressNumber = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
+                }
+            }
+            public string CityName
+            {
+                get
+                {
+                    return addressCity;
+                }
+                set
+                {
+                    if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
+                    {
+                        addressCity = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
+                }
+            }
+            public int CityZIP
+            {
+                get
+                {
+                    return addressZIP;
+                }
+                set
+                {
+                    if (value > 0 && value < 20000)
+                    {
+                        addressZIP = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
+                }
+            }
+            public string CityCountry
+            {
+                get
+                {
+                    return addressCountry;
+                }
+                set
+                {
+                    if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
+                    {
+                        addressCountry = value;
+                    }
+                    else
+                        throw new InvalidOperationException();
                 }
             }
         }

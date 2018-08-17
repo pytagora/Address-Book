@@ -9,7 +9,7 @@ namespace Model
         private readonly string Name = string.Empty;
         private List<Email> emails = new List<Email>();
         private List<Phone> phones = new List<Phone>();
-        private List<Residence> residences = new List<Residence>();
+        private List<Addreess> addreesses = new List<Addreess>();
         private List<SocialAccount> socialAccounts = new List<SocialAccount>();
 
         public int Id { get; set; }
@@ -30,7 +30,7 @@ namespace Model
         {
             emails = new List<Email>();
             phones = new List<Phone>();
-            residences = new List<Residence>();
+            addreesses = new List<Addreess>();
             socialAccounts = new List<SocialAccount>();
         }
         public Contact(string name, Email email)
@@ -38,7 +38,7 @@ namespace Model
             FirstName = name;
             emails = new List<Email>();
             phones = new List<Phone>();
-            residences = new List<Residence>();
+            addreesses = new List<Addreess>();
             socialAccounts = new List<SocialAccount>();
 
             this.AddEmail(email);
@@ -63,6 +63,10 @@ namespace Model
         {
             return socialAccounts;
         }
+        public IEnumerable<Addreess> GetAddreesses()
+        {
+            return addreesses;
+        }
         public void AddNumber(Phone phone)
         {
             phones.Add(phone);
@@ -71,13 +75,13 @@ namespace Model
         {
             phones.Remove(phone);
         }
-        public void AddResidence(Residence residence)
+        public void AddAddress(Addreess addreess)
         {
-            residences.Add(residence);
+            addreesses.Add(addreess);
         }
-        public void RemoveResidence(Residence residence)
+        public void RemoveAddress(Addreess addreess)
         {
-            residences.Remove(residence);
+            addreesses.Remove(addreess);
         }
         public void AddSocialAccount(SocialAccount socialAccount)
         {
