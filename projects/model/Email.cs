@@ -4,23 +4,16 @@ namespace Model
 {
     public class Email
     {
-        private string address = "";
-        private string type = "";
-        public Email()
-        {
-
-        }
+        private string _address = "";
+        private string _type = "";
         public string Address
         {
-            get
-            {
-                return address;
-            }
+            get => _address;
             set
             {
                 if (IsValidEmail(value))
                 {
-                    address = value;
+                    _address = value;
                 }
                 else
                     throw new InvalidOperationException();
@@ -40,15 +33,12 @@ namespace Model
         }
         public string Type
         {
-            get
-            {
-                return type;
-            }
+            get => _type;
             set
             {
                 if (value.Length > 1 && value.Length < 20 && value.IsNormalized())
                 {
-                    type = value;
+                    _type = value;
                 }
                 else
                     throw new InvalidOperationException();

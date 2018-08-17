@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Win32;
-using MahApps.Metro.Controls;
 
 namespace View
 {
     /// Interaction logic for MainWindow.xaml
-    public partial class MyAddressBook : MetroWindow
+    public partial class MyAddressBook
     {
 
         // List<Contact> contacts = new List<Contact>();
-        private MediaPlayer mediaPlayer = new MediaPlayer();
+        private readonly MediaPlayer _mediaPlayer = new MediaPlayer();
         public MyAddressBook()
         {
             InitializeComponent();
@@ -25,12 +23,12 @@ namespace View
         
             // dbContacts.ItemsSource = contacts;
 
-            DispatcherTimer Timer = new DispatcherTimer
+            DispatcherTimer timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(1)
             };
-            Timer.Tick += Timer_Tick;
-            Timer.Start();
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         // Method to read audio file.
@@ -41,41 +39,42 @@ namespace View
                 Filter = "MP3 files (*.mp3)|*.mp3|All files (*.*)|*.*"
             };
             if (openFileDialog.ShowDialog() == true)
-                mediaPlayer.Open(new Uri(openFileDialog.FileName));
+                _mediaPlayer.Open(new Uri(openFileDialog.FileName));
 
-            DispatcherTimer Timer = new DispatcherTimer
+            DispatcherTimer timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(1)
             };
-            Timer.Tick += Timer_Tick;
-            Timer.Start();
+            timer.Tick += Timer_Tick;
+            timer.Start();
         }
 
         // Calculation of audio duration.
         void Timer_Tick(object sender, EventArgs e)
         {
-            if (mediaPlayer.Source != null)
+            if (_mediaPlayer.Source != null)
             {
-                if (mediaPlayer.NaturalDuration.HasTimeSpan)
-                    lblStatus.Content = String.Format("{0} / {1}", mediaPlayer.Position.ToString(@"mm\:ss"), mediaPlayer.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
+                if (_mediaPlayer.NaturalDuration.HasTimeSpan)
+                    LblStatus.Content =
+                        $"{_mediaPlayer.Position:mm\\:ss} / {_mediaPlayer.NaturalDuration.TimeSpan:mm\\:ss}";
             }
             else
-                lblStatus.Content = "No file selected...";
+                LblStatus.Content = "No file selected...";
         }
 
         private void BtnPlay_Click(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Play();
+            _mediaPlayer.Play();
         }
 
         private void BtnPause_Click(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Pause();
+            _mediaPlayer.Pause();
         }
 
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Stop();
+            _mediaPlayer.Stop();
         }
 
         // Still not fully integrated with methods in App.xaml.cs
@@ -89,10 +88,10 @@ namespace View
 
         private void BtnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            AddNewContact WindowNewContact = new AddNewContact();
+            AddNewContact windowNewContact = new AddNewContact();
             if (!IsWindowOpen<Window>("WindowNewContact"))
             {
-                WindowNewContact.Show();
+                windowNewContact.Show();
             }
         }
 

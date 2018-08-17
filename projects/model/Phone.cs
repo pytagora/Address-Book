@@ -5,23 +5,16 @@ namespace Model
 {
     public class Phone
     {
-        public string number;
-        private string type;
-        public Phone()
-        {
-
-        }
+        public string phoneNumber;
+        private string _type;
         public string Number
         {
-            get
-            {
-                return number;
-            }
+            get => phoneNumber;
             set
             {
                 if (Regex.IsMatch(value, @"^d+$"))
                 {
-                    number = value;
+                    phoneNumber = value;
                 }
                 else
                     throw new InvalidOperationException();
@@ -29,15 +22,12 @@ namespace Model
         }
         public string Type
         {
-            get
-            {
-                return type;
-            }
+            get => _type;
             set
             {
                 if (value.Length > 1 && value.Length < 20 && value.IsNormalized())
                 {
-                    type = value;
+                    _type = value;
                 }
                 else
                     throw new InvalidOperationException();

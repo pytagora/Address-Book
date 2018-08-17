@@ -5,11 +5,10 @@ namespace Model
 {
     public class Contact
     {
-        private readonly string Name = string.Empty;
-        private List<Email> emails = new List<Email>();
-        private List<Phone> phones = new List<Phone>();
-        private List<Addreess> addreesses = new List<Addreess>();
-        private List<SocialAccount> socialAccounts = new List<SocialAccount>();
+        private readonly List<Email> _emails;
+        private readonly List<Phone> _phones;
+        private readonly List<Addreess> _addreesses;
+        private readonly List<SocialAccount> _socialAccounts;
 
         public int Id { get; set; }
 
@@ -27,68 +26,68 @@ namespace Model
 
         public Contact()
         {
-            emails = new List<Email>();
-            phones = new List<Phone>();
-            addreesses = new List<Addreess>();
-            socialAccounts = new List<SocialAccount>();
+            _emails = new List<Email>();
+            _phones = new List<Phone>();
+            _addreesses = new List<Addreess>();
+            _socialAccounts = new List<SocialAccount>();
         }
         public Contact(string firstName, Email email)
         {
             FirstName = firstName;
-            emails = new List<Email>();
-            phones = new List<Phone>();
-            addreesses = new List<Addreess>();
-            socialAccounts = new List<SocialAccount>();
+            _emails = new List<Email>();
+            _phones = new List<Phone>();
+            _addreesses = new List<Addreess>();
+            _socialAccounts = new List<SocialAccount>();
 
-            this.AddEmail(email);
+            AddEmail(email);
         }
         public void AddEmail(Email email)
         {
-            emails.Add(email);
+            _emails.Add(email);
         }
         public void RemoveEmail(Email email)
         {
-            emails.Remove(email);
+            _emails.Remove(email);
         }
         public IEnumerable<Email> GetEmails()
         {
-            return emails;
+            return _emails;
         }
         public IEnumerable<Phone> GetPhones()
         {
-            return phones;
+            return _phones;
         }
         public IEnumerable<SocialAccount> GetSocialAccounts()
         {
-            return socialAccounts;
+            return _socialAccounts;
         }
         public IEnumerable<Addreess> GetAddreesses()
         {
-            return addreesses;
+            return _addreesses;
         }
         public void AddNumber(Phone phone)
         {
-            phones.Add(phone);
+            _phones.Add(phone);
         }
         public void RemoveNumber(Phone phone)
         {
-            phones.Remove(phone);
+            _phones.Remove(phone);
         }
         public void AddAddress(Addreess addreess)
         {
-            addreesses.Add(addreess);
+            _addreesses.Add(addreess);
         }
         public void RemoveAddress(Addreess addreess)
         {
-            addreesses.Remove(addreess);
+            _addreesses.Remove(addreess);
         }
         public void AddSocialAccount(SocialAccount socialAccount)
         {
-            socialAccounts.Add(socialAccount);
+            _socialAccounts.Add(socialAccount);
         }
         public void RemoveSocialAccount(SocialAccount socialAccount)
         {
-            socialAccounts.Remove(socialAccount);
+            _socialAccounts.Remove(socialAccount);
         }
     }
 }

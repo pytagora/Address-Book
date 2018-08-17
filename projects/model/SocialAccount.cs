@@ -4,24 +4,17 @@ namespace Model
 {
     public class SocialAccount
     {
-        private string id;
-        private string socialNetwork;
-        private string hyperlink = "";
-        public SocialAccount()
+        private string _id;
+        private string _socialNetwork;
+        private string _hyperlink = "";
+        public string Id
         {
-
-        }
-        public string ID
-        {
-            get
-            {
-                return id;
-            }
+            get => _id;
             set
             {
                 if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
                 {
-                    id = value;
+                    _id = value;
                 }
                 else
                     throw new InvalidOperationException();
@@ -29,15 +22,12 @@ namespace Model
         }
         public string SocialNetwork
         {
-            get
-            {
-                return socialNetwork;
-            }
+            get => _socialNetwork;
             set
             {
                 if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
                 {
-                    socialNetwork = value;
+                    _socialNetwork = value;
                 }
                 else
                     throw new InvalidOperationException();
@@ -45,15 +35,12 @@ namespace Model
         }
         public string Hyperlink
         {
-            get
-            {
-                return hyperlink;
-            }
+            get => _hyperlink;
             set
             {
-                if (id != "" && socialNetwork != "")
+                if (_id != "" && _socialNetwork != "")
                 {
-                    hyperlink = "https://www." + socialNetwork + ".com/" + id;
+                    _hyperlink = "https://www." + _socialNetwork + ".com/" + _id;
                 }
             }
         }

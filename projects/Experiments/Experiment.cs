@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Web;
 using Newtonsoft.Json.Converters;
 using System.IO;
 using Model;
@@ -15,7 +9,7 @@ namespace Experiments
 {
     class Experiment
     {
-        static void Main(string[] args)
+        static void Main()
         {
             List<Contact> contacts = new List<Contact>();
             Contact contact = new Contact
@@ -25,14 +19,28 @@ namespace Experiments
                 Gender = "Male",
                 BirthPlace = "Rijeka",
             };
-            Email MainEmail = new Email();
-            MainEmail.Address = "vskobljanec@gmail.com";
-            MainEmail.Type = "Home";
-            contact.AddEmail(MainEmail);
-            Email SchoolEmail = new Email();
-            SchoolEmail.Address = "vskobljanec@uniri.hr";
-            SchoolEmail.Type = "School";
-            contact.AddEmail(SchoolEmail);
+            Email mainEmail = new Email
+            {
+                Address = "vskobljanec@gmail.com",
+                Type = "Home"
+            };
+            contact.AddEmail(mainEmail);
+            Email schoolEmail = new Email
+            {
+                Address = "vskobljanec@uniri.hr",
+                Type = "School"
+            };
+            contact.AddEmail(schoolEmail);
+
+            Addreess addreess = new Addreess
+            {
+                AddressName = "Ilica",
+                AddressNumber = 47,
+                AddressCity = "Zagreb",
+                AddressZip = 10000,
+                AddressCountry = "Croatia"
+            };
+            contact.AddAddress(addreess);
             var tmp = contact.GetEmails();
             foreach (var item in tmp)
             {

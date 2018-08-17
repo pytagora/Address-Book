@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
-    <Compile Include="Residence.cs" />
+    <Compile Include="Address.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="SocialAccount.cs" />

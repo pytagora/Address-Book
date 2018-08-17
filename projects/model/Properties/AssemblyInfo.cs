@@ -1,9 +1,7 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Windows;
+using Model.Properties;
 
 [assembly: ComVisible(false)]
 
@@ -21,18 +19,21 @@ using System.Windows;
 [assembly: AssemblyCulture(AssemblyDescription.Culture)]
 [assembly: NeutralResourcesLanguage("en-US")]
 
-internal static partial class AssemblyDescription
+namespace Model.Properties
 {
-    public const string Title = "Address book";
-    public const string Company = "Valentino Skobljanec";
-    public const string Trademark = "";
-    public const string Copyright = "Copyright © 2018 " + Company;
-    public const string Product = "Address book";
-    public const string Description = "Desktop App for storing contacts";
+    internal static class AssemblyDescription
+    {
+        public const string Title = "Address book";
+        public const string Company = "Valentino Skobljanec";
+        public const string Trademark = "";
+        public const string Copyright = "Copyright © 2018 " + Company;
+        public const string Product = "Address book";
+        public const string Description = "Desktop App for storing contacts";
  
-    public const string Culture = "";
+        public const string Culture = "";
 
-    public const string Version = "1.0.2";
+        public const string Version = "1.0.2";
 
-    public const string Configuration = "";
+        public const string Configuration = "";
+    }
 }

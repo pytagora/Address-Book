@@ -1,10 +1,11 @@
 ﻿using System;
+using Model;
 
-namespace Model
+namespace SampleConsoleApplication
 {
     class ConsoleApp
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Contact contact = new Contact();
             Console.WriteLine("\t***Welcome to my console application!!!***");
@@ -50,7 +51,7 @@ namespace Model
             }
             Console.WriteLine("\nTo add contact's address press key 'A': ");
             key = Console.ReadKey().KeyChar;
-            if (key == 'A' || key == 'a')
+            while (key == 'A' || key == 'a')
             {
                 Console.WriteLine("\nEnter contact's new address: ");
                 string tmpAddress = Console.ReadLine();
@@ -61,7 +62,7 @@ namespace Model
             }
             Console.WriteLine("\nTo add contact's number press key 'A': ");
             key = Console.ReadKey().KeyChar;
-            if (key == 'A' || key == 'a')
+            while (key == 'A' || key == 'a')
             {
                 Console.WriteLine("\nEnter contact's new number: ");
                 string tmpNumber = Console.ReadLine();
@@ -73,10 +74,10 @@ namespace Model
             Console.WriteLine("\nTo add contact's social account press key 'A': ");
             key = Console.ReadKey().KeyChar;
             SocialAccount socialAccount = new SocialAccount();
-            if (key == 'A' || key == 'a')
+            while (key == 'A' || key == 'a')
             {
                 Console.WriteLine("\nEnter contact's new social account ID: ");
-                socialAccount.ID = Console.ReadLine();
+                socialAccount.Id = Console.ReadLine();
                 Console.WriteLine("\nEnter contact's social network: ");
                 socialAccount.SocialNetwork = Console.ReadLine();
                 contact.AddSocialAccount(socialAccount);
@@ -93,7 +94,6 @@ namespace Model
             Console.WriteLine("\nContact with a name '{0}' birthplace '{1}' and birthday '{2}' gender '{3}' and comment '{4}' created!\n", contact.FirstName + contact.LastName, contact.BirthPlace, contact.BirthDay, contact.Gender,contact.Comment);
             Console.WriteLine("\nProcess done. Press any key to exit.");            
             Console.ReadKey();
-            return;
         }
     }
 }

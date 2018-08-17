@@ -4,31 +4,27 @@ namespace Model
 {
     public class Addreess
     {
-        private string addressName = "";
-        private int addressNumber = 0;
-        private string addressCity = "";
-        private int addressZIP = 0;
-        private string addressCountry = "";
-        public Addreess()
-        {
-
-        }
+        private string _addressName = "";
+        private int _addressNumber;
+        private string _addressCity = "";
+        private int _addressZip;
+        private string _addressCountry = "";
         public string AddressStreet()
         {
-            if (addressName != "" && addressNumber != 0)
+            if (_addressName != "" && _addressNumber != 0)
             {
-                return addressName + addressNumber;
+                return _addressName + _addressNumber;
             }
             else
             {
                 return "";
             }
         }
-        public string ResidenceCity()
+        public string FullAddress()
         {
-            if (addressCity != "" && addressNumber != 0 && addressCountry != "")
+            if (_addressCity != "" && _addressNumber != 0 && _addressCountry != "")
             {
-                string result = addressZIP + " " + addressCity + ", " + addressCountry;
+                string result = _addressName + " " + AddressNumber + " " + _addressZip + " " + _addressCity + ", " + _addressCountry;
                 return result;
             }
             else
@@ -36,81 +32,66 @@ namespace Model
                 return "Not Defined!";
             }
         }
-        public string StreetName
+        public string AddressName
         {
-            get
-            {
-                return addressName;
-            }
+            get => _addressName;
             set
             {
                 if (value.Length > 4 && value.Length < 35 && value.IsNormalized())
                 {
-                    addressName = value;
+                    _addressName = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public int StreetNumber
+        public int AddressNumber
         {
-            get
-            {
-                return addressNumber;
-            }
+            get => _addressNumber;
             set
             {
                 if (value > 0 && value < 20000)
                 {
-                    addressNumber = value;
+                    _addressNumber = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public string CityName
+        public string AddressCity
         {
-            get
-            {
-                return addressCity;
-            }
+            get => _addressCity;
             set
             {
                 if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                 {
-                    addressCity = value;
+                    _addressCity = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public int CityZIP
+        public int AddressZip
         {
-            get
-            {
-                return addressZIP;
-            }
+            get => _addressZip;
             set
             {
                 if (value > 0 && value < 20000)
                 {
-                    addressZIP = value;
+                    _addressZip = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public string CityCountry
+        public string AddressCountry
         {
-            get
-            {
-                return addressCountry;
-            }
+            get => _addressCountry;
             set
             {
                 if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                 {
-                    addressCountry = value;
+                    _addressCountry = value;
                 }
                 else
                     throw new InvalidOperationException();
