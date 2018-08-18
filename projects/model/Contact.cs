@@ -3,7 +3,7 @@
 namespace Model
 {
     public class Contact
-    {
+    {   
         private readonly List<Email> _emails;
         private readonly List<PhoneNumber> _phoneNumbers;
         private readonly List<Address> _addreesses;

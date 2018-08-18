@@ -4,11 +4,23 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.IO;
 using Model;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace Experiments
 {
     class Experiment
     {
+        static void ValidationResults(ValidationResult results)
+        {
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    Console.WriteLine("Property " + failure.PropertyName + " failed validation. Error was: " + failure.ErrorMessage);
+                }
+            }
+        }
         static void Main()
         {
             List<Contact> contacts = new List<Contact>();
@@ -22,11 +34,17 @@ namespace Experiments
                 BirthPlace = "Rijeka",
                 Comment = "first user!"
             };
+            ContactValidator contactValidator = new ContactValidator();
+            ValidationResult results = contactValidator.Validate(contact);
+            ValidationResults(results);
             Email mainEmail = new Email
             {
                 Address = "vskobljanec@gmail.com",
                 Type = "Home"
             };
+            EmailValidator emailValidator = new EmailValidator();
+            results = emailValidator.Validate(mainEmail);
+            ValidationResults(results);
             contact.AddEmail(mainEmail);
             Email schoolEmail = new Email
             {
@@ -43,18 +61,27 @@ namespace Experiments
                 Zip = 10000,
                 Country = "Croatia"
             };
+            AddressValidator addressValidator = new AddressValidator();
+            results = addressValidator.Validate(addreess);
+            ValidationResults(results);
             contact.AddAddress(addreess);
             SocialAccount socialAccount = new SocialAccount
             {
                 Id = "pytagora",
                 SocialNetwork = "Github"
             };
+            SocialAccountValidator socialAccountValidator = new SocialAccountValidator();
+            results = socialAccountValidator.Validate(socialAccount);
+            ValidationResults(results);
             contact.AddSocialAccount(socialAccount);
             PhoneNumber phoneNumber = new PhoneNumber
             {
                 Number = "1313164",
                 Type = "Home"
             };
+            PhoneNumberValidator phoneNumberValidator = new PhoneNumberValidator();
+            results = phoneNumberValidator.Validate(phoneNumber);
+            ValidationResults(results);
             contact.AddPhoneNumber(phoneNumber);
             var tmp = contact.GetEmails();
             foreach (var item in tmp)

@@ -6,8 +6,8 @@ namespace Model
     {
         public PhoneNumberValidator()
         {
-            RuleFor(x => x.Number).NotNull().WithMessage("Please specify contact's phone number.");
-            RuleFor(x => x.Type).NotEmpty().WithMessage("Please specify contact's phone type.");
+            RuleFor(phoneNumber => phoneNumber.Number).NotNull().WithMessage("Please specify contact's phone number.");
+            RuleFor(phoneNumber => phoneNumber.Type).NotEmpty().WithMessage("Please specify contact's phone type.");
         }
     }
 }
