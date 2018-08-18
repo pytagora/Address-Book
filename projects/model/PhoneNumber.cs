@@ -1,24 +1,15 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 namespace Model
 {
-    public class Phone
+    public class PhoneNumber
     {
-        public string phoneNumber;
+        private string number;
         private string _type;
         public string Number
         {
-            get => phoneNumber;
-            set
-            {
-                if (Regex.IsMatch(value, @"^d+$"))
-                {
-                    phoneNumber = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            get => number;
+            set => number = value;
         }
         public string Type
         {

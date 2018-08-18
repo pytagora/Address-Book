@@ -14,10 +14,13 @@ namespace Experiments
             List<Contact> contacts = new List<Contact>();
             Contact contact = new Contact
             {
+                Id = 1,
                 FirstName = "Valentino",
                 LastName = "Skobljanec",
                 Gender = "Male",
+                //BirthDay = new DateTime(1992,9,7),
                 BirthPlace = "Rijeka",
+                Comment = "first user!"
             };
             Email mainEmail = new Email
             {
@@ -31,8 +34,8 @@ namespace Experiments
                 Type = "School"
             };
             contact.AddEmail(schoolEmail);
-
-            Addreess addreess = new Addreess
+            contact.RemoveEmail(schoolEmail);
+            Address addreess = new Address
             {
                 AddressName = "Ilica",
                 AddressNumber = 47,
@@ -41,6 +44,18 @@ namespace Experiments
                 AddressCountry = "Croatia"
             };
             contact.AddAddress(addreess);
+            SocialAccount socialAccount = new SocialAccount
+            {
+                Id = "pytagora",
+                SocialNetwork = "Github"
+            };
+            contact.AddSocialAccount(socialAccount);
+            PhoneNumber phoneNumber = new PhoneNumber
+            {
+                Number = "1313164",
+                Type = "Home"
+            };
+            contact.AddPhoneNumber(phoneNumber);
             var tmp = contact.GetEmails();
             foreach (var item in tmp)
             {

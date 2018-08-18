@@ -2,7 +2,7 @@
 
 namespace Model
 {
-    public class Addreess
+    public class Address
     {
         private string _addressName = "";
         private int _addressNumber;
