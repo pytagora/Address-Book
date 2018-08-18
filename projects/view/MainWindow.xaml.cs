@@ -79,7 +79,7 @@ namespace View
 
         // Still not fully integrated with methods in App.xaml.cs
         // For checking is the new window already opened.
-        public static bool IsWindowOpen<T>(string name = "") where T : Window
+        private static bool IsWindowOpen<T>(string name = "") where T : Window
         {
             return string.IsNullOrEmpty(name)
                 ? Application.Current.Windows.OfType<T>().Any()

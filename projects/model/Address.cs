@@ -4,27 +4,16 @@ namespace Model
 {
     public class Address
     {
-        private string _addressName = "";
-        private int _addressNumber;
-        private string _addressCity = "";
-        private int _addressZip;
-        private string _addressCountry = "";
-        public string AddressStreet()
-        {
-            if (_addressName != "" && _addressNumber != 0)
-            {
-                return _addressName + _addressNumber;
-            }
-            else
-            {
-                return "";
-            }
-        }
+        private string _street = "";
+        private int _number;
+        private string _city = "";
+        private int _zip;
+        private string _country = "";
         public string FullAddress()
         {
-            if (_addressCity != "" && _addressNumber != 0 && _addressCountry != "")
+            if (_city != "" && _number != 0 && _country != "")
             {
-                string result = _addressName + " " + AddressNumber + " " + _addressZip + " " + _addressCity + ", " + _addressCountry;
+                string result = _street + " " + _number + " " + _zip + " " + _city + ", " + _country;
                 return result;
             }
             else
@@ -32,66 +21,66 @@ namespace Model
                 return "Not Defined!";
             }
         }
-        public string AddressName
+        public string Street
         {
-            get => _addressName;
+            get => _street;
             set
             {
                 if (value.Length > 4 && value.Length < 35 && value.IsNormalized())
                 {
-                    _addressName = value;
+                    _street = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public int AddressNumber
+        public int Number
         {
-            get => _addressNumber;
+            get => _number;
             set
             {
                 if (value > 0 && value < 20000)
                 {
-                    _addressNumber = value;
+                    _number = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public string AddressCity
+        public string City
         {
-            get => _addressCity;
+            get => _city;
             set
             {
                 if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                 {
-                    _addressCity = value;
+                    _city = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public int AddressZip
+        public int Zip
         {
-            get => _addressZip;
+            get => _zip;
             set
             {
                 if (value > 0 && value < 20000)
                 {
-                    _addressZip = value;
+                    _zip = value;
                 }
                 else
                     throw new InvalidOperationException();
             }
         }
-        public string AddressCountry
+        public string Country
         {
-            get => _addressCountry;
+            get => _country;
             set
             {
                 if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
                 {
-                    _addressCountry = value;
+                    _country = value;
                 }
                 else
                     throw new InvalidOperationException();

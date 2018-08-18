@@ -56,6 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressValidator.cs" />
+    <Compile Include="SocialAccountValidator.cs" />
+    <Compile Include="PhoneNumberValidator.cs" />
+    <Compile Include="EmailValidator.cs" />
+    <Compile Include="ContactValidator.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Email.cs" />

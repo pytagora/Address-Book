@@ -5,40 +5,21 @@ namespace Model
     public class Contact
     {
         private readonly List<Email> _emails;
-        private readonly List<PhoneNumber> _phones;
+        private readonly List<PhoneNumber> _phoneNumbers;
         private readonly List<Address> _addreesses;
         private readonly List<SocialAccount> _socialAccounts;
 
-        public int Id { get; set; }
-
+        public int Id = 0;
         public string FirstName { get; set; }
-
         public string LastName { get; set; }
-
         public string BirthPlace { get; set; }
-
         //public DateTime BirthDay { get; set; }
-
         public string Gender { get; set; }
-
         public string Comment { get; set; }
 
         public Contact()
         {
-            _emails = new List<Email>();
-            _phones = new List<PhoneNumber>();
-            _addreesses = new List<Address>();
-            _socialAccounts = new List<SocialAccount>();
-        }
-        public Contact(string firstName, Email email)
-        {
-            FirstName = firstName;
-            _emails = new List<Email>();
-            _phones = new List<PhoneNumber>();
-            _addreesses = new List<Address>();
-            _socialAccounts = new List<SocialAccount>();
-
-            AddEmail(email);
+            ++Id;
         }
         public void AddEmail(Email email)
         {
@@ -54,7 +35,7 @@ namespace Model
         }
         public IEnumerable<PhoneNumber> GetPhones()
         {
-            return _phones;
+            return _phoneNumbers;
         }
         public IEnumerable<SocialAccount> GetSocialAccounts()
         {
@@ -66,11 +47,11 @@ namespace Model
         }
         public void AddPhoneNumber(PhoneNumber phone)
         {
-            _phones.Add(phone);
+            _phoneNumbers.Add(phone);
         }
         public void RemovePhoneNumber(PhoneNumber phone)
         {
-            _phones.Remove(phone);
+            _phoneNumbers.Remove(phone);
         }
         public void AddAddress(Address addreess)
         {

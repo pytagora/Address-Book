@@ -33,7 +33,7 @@
         <TextBox Grid.Row="0" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="FirstName"/>
         <Label  FontWeight="Bold" Grid.Row="1" Grid.Column="0">Last name:</Label>
         <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="LastName"/>
-        <Label  FontWeight="Bold" Grid.Row="2" Grid.Column="2">Place of birth:</Label>
+        <Label  FontWeight="Bold" Grid.Row="2" Grid.Column="0">Place of birth:</Label>
         <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="BirthPlace"/>
         <Label  FontWeight="Bold" Grid.Row="3" Grid.Column="0">Date of birth:</Label>
         <DatePicker HorizontalAlignment="Left"

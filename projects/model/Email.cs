@@ -19,7 +19,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
-        public bool IsValidEmail(string email)
+        private bool IsValidEmail(string email)
         {
             try
             {

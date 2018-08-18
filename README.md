@@ -39,10 +39,10 @@ This application is developed under the following standards:
 ## Release Notes
 Below is a summary of major changes.
 
-### 1.0.2
+### 0.0.2
 - License file and settings for GitHub page of the project.
 
-### 1.0.1
+### 0.0.1
 - Initial build of the application.
 - MainWindow and AddNewContact included.
 - Code behind buttons done only partially.

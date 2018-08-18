@@ -37,11 +37,11 @@ namespace Experiments
             contact.RemoveEmail(schoolEmail);
             Address addreess = new Address
             {
-                AddressName = "Ilica",
-                AddressNumber = 47,
-                AddressCity = "Zagreb",
-                AddressZip = 10000,
-                AddressCountry = "Croatia"
+                Street = "Ilica",
+                Number = 47,
+                City = "Zagreb",
+                Zip = 10000,
+                Country = "Croatia"
             };
             contact.AddAddress(addreess);
             SocialAccount socialAccount = new SocialAccount

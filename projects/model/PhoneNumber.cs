@@ -4,12 +4,12 @@ namespace Model
 {
     public class PhoneNumber
     {
-        private string number;
+        private string _number;
         private string _type;
         public string Number
         {
-            get => number;
-            set => number = value;
+            get => _number;
+            set => _number = value;
         }
         public string Type
         {
