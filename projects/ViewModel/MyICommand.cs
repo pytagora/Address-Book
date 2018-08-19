@@ -5,17 +5,17 @@ namespace ViewModel
 {
     public class MyICommand : ICommand
     {
-        readonly Action _TargetExecuteMethod;
+        readonly Action _targetExecuteMethod;
         private readonly Func<bool> _TargetCanExecuteMethod;
 
         public MyICommand(Action executeMethod)
         {
-            _TargetExecuteMethod = executeMethod;
+            _targetExecuteMethod = executeMethod;
         }
 
         public MyICommand(Action executeMethod, Func<bool> canExecuteMethod)
         {
-            _TargetExecuteMethod = executeMethod;
+            _targetExecuteMethod = executeMethod;
             _TargetCanExecuteMethod = canExecuteMethod;
         }
 
@@ -43,7 +43,7 @@ namespace ViewModel
 
         void ICommand.Execute(object parameter)
         {
-            _TargetExecuteMethod?.Invoke();
+            _targetExecuteMethod?.Invoke();
         }
     }
 }
