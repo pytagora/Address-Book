@@ -25,8 +25,8 @@
             <Button Name="BtnChangeContact" Click="BtnChangeContact_Click" Margin="0,15,0,0">_Change Contact</Button>
             <Button Name="BtnDeleteContact" Click="BtnDeleteContact_Click" Margin="0,15,0,0">_Delete Contact</Button>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding contacts}"
-                  SelectedItem="{Binding Path=SelectedContacts, Mode=TwoWay}"
+        <DataGrid ItemsSource="{Binding Contacts}"
+                  SelectedItem="{Binding SelectedContact}"
                   CanUserReorderColumns="False" CanUserResizeColumns="False"
                   CanUserResizeRows="False" CanUserSortColumns="True"
                   Margin="10,120,150,10"

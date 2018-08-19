@@ -1,58 +1,47 @@
-﻿/*using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Contact;
+﻿using System.Collections.ObjectModel;
+using Model;
 
 namespace ViewModel
 {
-    public class ContactViewModel : Base
+    public class ContactViewModel 
     {
+        public MyICommand DeleteCommand { get; set; }
+
         public ContactViewModel()
         {
-            Contacts = new ObservableCollection<ContactModel>();
-            Service = new Service();
-            Service.GetContacts(_PopulateContacts);
-            Delete = new DeleteCommand(
-                Service,
-                () => CanDelete,
-                Contacts =>
-                {
-                    CurrentContact = null;
-                    Service.GetContacts(_PopulateContacts());
-                });
+            LoadContacts();
+            DeleteCommand = new MyICommand(OnDelete, CanDelete);
+        }
+        public ObservableCollection<Contact> Contacts { get; set; }
+
+        public void LoadContacts()
+        {
+            ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
+            // TO DO!!
+            // read contacts from json file or protobuf
+            Contacts = contacts;
         }
 
-        private void _PopulateContacts(IEnumerable<ContactModel> contacts)
-        {
-            Contacts.Clear();
-            foreach (var contact in contacts)
-            {
-                Contacts.Add(contact);
-            }
-        }
-        public IService Service { get; set; }
+        private Contact _selectedContact;
 
-        public bool CanDelete
+        public Contact SelectedContact
         {
-            get { return _currentContact != null; }
-        }
-        public ObservableCollection<ContactModel> Contacts { get; set; }
-        public DeleteCommand Delete { get; set; }
-        private ContactModel _currentContact;
-
-        public ContactModel CurrentContact
-        {
-            get { return _currentContact; }
+            get { return _selectedContact; }
             set
             {
-                _currentContact = value;
-                RaisePropertyChanged("CurrentContact");
-                RaisePropertyChanged("CanDelete");
-                Delete.RaiseCanExecuteChanged();
+                _selectedContact = value;
+                DeleteCommand.RaiseCanExecuteChanged();
             }
         }
+
+        private void OnDelete()
+        {
+            Contacts.Remove(SelectedContact);
+        }
+
+        private bool CanDelete()
+        {
+            return SelectedContact != null;
+        }
     }
-}*/
+}
