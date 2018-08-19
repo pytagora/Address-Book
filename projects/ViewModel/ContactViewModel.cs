@@ -2,7 +2,7 @@
 
 namespace ViewModel
 {
-    public class ContactViewModel
+    public class ContactViewModel : Base
     {
 
     }
