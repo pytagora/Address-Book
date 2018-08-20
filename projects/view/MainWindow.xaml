@@ -20,10 +20,10 @@
                 <Button Name="BtnOpen" Margin="5,0"  Click="BtnOpen_Click">_Open</Button>
             </WrapPanel>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1050,0,10,0">
-            <Button Name="BtnAddContact" Click="BtnAddContact_Click">_Add Contact</Button>
-            <Button Name="BtnChangeContact" Click="BtnChangeContact_Click" Margin="0,15,0,0">_Change Contact</Button>
-            <Button Name="BtnDeleteContact" Command="{Binding DeleteCommand}" Click="BtnDeleteContact_Click" Margin="0,15,0,0">_Delete Contact</Button>
+        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Center"  Margin="1050,-250,10,0">
+            <Button Name="BtnAddContact" Click="BtnAddContact_Click">_Add</Button>
+            <Button Name="BtnChangeContact" Click="BtnChangeContact_Click" Margin="0,15,0,0">_Change</Button>
+            <Button Name="BtnDeleteContact" Command="{Binding DeleteCommand}" Click="BtnDeleteContact_Click" Margin="0,15,0,0">_Delete</Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding Contacts}"
                   SelectedItem="{Binding SelectedContact}"
