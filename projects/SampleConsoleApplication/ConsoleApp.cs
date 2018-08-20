@@ -15,6 +15,7 @@ namespace SampleConsoleApplication
             contact.FirstName = Console.ReadLine(); 
             Console.WriteLine("Enter contact's last name: ");
             contact.LastName = Console.ReadLine();
+
             Console.Write("To add contact's birthplace press key 'A': ");
             char key = Console.ReadKey().KeyChar;
             if (key == 'A' || key == 'a')
@@ -22,6 +23,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nEnter contact's birthplace: ");
                 contact.BirthPlace = Console.ReadLine();
             }
+
             Console.WriteLine("\nTo add contact's birthday press key 'A': ");
             key = Console.ReadKey().KeyChar;
             if (key == 'A' || key == 'a')
@@ -31,6 +33,7 @@ namespace SampleConsoleApplication
                 //DateTime dateTime = Convert.ToDateTime(birthday);
                 //contact.BirthDay = dateTime;
             }
+
             Console.WriteLine("To add contact's gender press key 'A': ");
             key = Console.ReadKey().KeyChar;
             if (key == 'A' || key == 'a')
@@ -38,6 +41,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nEnter contact's gender: ");
                 contact.Gender = Console.ReadLine();
             }
+
             Console.WriteLine("\nTo add contact's email press key 'A': ");
             key = Console.ReadKey().KeyChar;
             while(key == 'A' || key == 'a')
@@ -49,6 +53,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nTo add another contact's email press 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
+
             Console.WriteLine("\nTo add contact's address press key 'A': ");
             key = Console.ReadKey().KeyChar;
             while (key == 'A' || key == 'a')
@@ -60,6 +65,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nTo add another contact's address press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
+
             Console.WriteLine("\nTo add contact's number press key 'A': ");
             key = Console.ReadKey().KeyChar;
             while (key == 'A' || key == 'a')
@@ -84,6 +90,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nTo add another contact's social account press key 'A': ");
                 key = Console.ReadKey().KeyChar;
             }
+
             Console.WriteLine("\nTo add comment for contact press key 'A': ");
             key = Console.ReadKey().KeyChar;
             if (key == 'A' || key == 'a')

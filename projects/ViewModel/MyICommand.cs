@@ -6,7 +6,7 @@ namespace ViewModel
     public class MyICommand : ICommand
     {
         readonly Action _targetExecuteMethod;
-        private readonly Func<bool> _TargetCanExecuteMethod;
+        private readonly Func<bool> _targetCanExecuteMethod;
 
         public MyICommand(Action executeMethod)
         {
@@ -16,7 +16,7 @@ namespace ViewModel
         public MyICommand(Action executeMethod, Func<bool> canExecuteMethod)
         {
             _targetExecuteMethod = executeMethod;
-            _TargetCanExecuteMethod = canExecuteMethod;
+            _targetCanExecuteMethod = canExecuteMethod;
         }
 
         public void RaiseCanExecuteChanged()
@@ -26,12 +26,12 @@ namespace ViewModel
 
         bool ICommand.CanExecute(object parameter)
         {
-            if (_TargetCanExecuteMethod != null)
+            if (_targetCanExecuteMethod != null)
             {
-                return _TargetCanExecuteMethod();
+                return _targetCanExecuteMethod();
             }
 
-            if (_TargetCanExecuteMethod != null)
+            if (_targetCanExecuteMethod != null)
             {
                 return true;
             }

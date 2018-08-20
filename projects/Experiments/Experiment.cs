@@ -37,6 +37,7 @@ namespace Experiments
             ContactValidator contactValidator = new ContactValidator();
             ValidationResult results = contactValidator.Validate(contact);
             ValidationResults(results);
+
             Email mainEmail = new Email
             {
                 Address = "vskobljanec@gmail.com",
@@ -46,6 +47,7 @@ namespace Experiments
             results = emailValidator.Validate(mainEmail);
             ValidationResults(results);
             contact.AddEmail(mainEmail);
+
             Email schoolEmail = new Email
             {
                 Address = "vskobljanec@uniri.hr",
@@ -53,6 +55,7 @@ namespace Experiments
             };
             contact.AddEmail(schoolEmail);
             contact.RemoveEmail(schoolEmail);
+
             Address addreess = new Address
             {
                 Street = "Ilica",
@@ -65,6 +68,7 @@ namespace Experiments
             results = addressValidator.Validate(addreess);
             ValidationResults(results);
             contact.AddAddress(addreess);
+
             SocialAccount socialAccount = new SocialAccount
             {
                 Id = "pytagora",
@@ -74,6 +78,7 @@ namespace Experiments
             results = socialAccountValidator.Validate(socialAccount);
             ValidationResults(results);
             contact.AddSocialAccount(socialAccount);
+
             PhoneNumber phoneNumber = new PhoneNumber
             {
                 Number = "1313164",
@@ -89,6 +94,7 @@ namespace Experiments
                 Console.WriteLine("{0} - {1}", item.Address, item.Type);
             }
             contacts.Add(contact);
+
             Contact user = new Contact
             {
                 FirstName = "Ivo",
@@ -96,6 +102,7 @@ namespace Experiments
                 Gender = "Male",
             };
             contacts.Add(user);
+
             JsonSerializer serializer = new JsonSerializer();
             serializer.Converters.Add(new JavaScriptDateTimeConverter());
             serializer.NullValueHandling = NullValueHandling.Ignore;

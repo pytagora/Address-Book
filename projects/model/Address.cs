@@ -9,6 +9,7 @@ namespace Model
         private string _city = "";
         private int _zip;
         private string _country = "";
+
         public string FullAddress()
         {
             if (_city != "" && _number != 0 && _country != "")
@@ -21,6 +22,7 @@ namespace Model
                 return "Not Defined!";
             }
         }
+
         public string Street
         {
             get => _street;
@@ -34,6 +36,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public int Number
         {
             get => _number;
@@ -47,6 +50,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public string City
         {
             get => _city;
@@ -60,6 +64,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public int Zip
         {
             get => _zip;
@@ -73,6 +78,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public string Country
         {
             get => _country;

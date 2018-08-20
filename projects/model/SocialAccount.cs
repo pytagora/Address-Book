@@ -7,6 +7,7 @@ namespace Model
         private string _id;
         private string _socialNetwork;
         private string _hyperlink = "";
+
         public string Id
         {
             get => _id;
@@ -20,6 +21,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public string SocialNetwork
         {
             get => _socialNetwork;
@@ -33,6 +35,7 @@ namespace Model
                     throw new InvalidOperationException();
             }
         }
+
         public string Hyperlink
         {
             get => _hyperlink;

@@ -11,26 +11,10 @@ namespace Model
             get => _address;
             set
             {
-                if (IsValidEmail(value))
-                {
-                    _address = value;
-                }
-                else
-                    throw new InvalidOperationException();
+                _address = value;
             }
         }
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+
         public string Type
         {
             get => _type;
