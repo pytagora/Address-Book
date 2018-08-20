@@ -16,15 +16,7 @@ namespace Model
         public string Type
         {
             get => _type;
-            set
-            {
-                if (value.Length > 1 && value.Length < 20 && value.IsNormalized())
-                {
-                    _type = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _type = value;
         }
     }
 }

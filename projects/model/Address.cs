@@ -26,71 +26,31 @@ namespace Model
         public string Street
         {
             get => _street;
-            set
-            {
-                if (value.Length > 4 && value.Length < 35 && value.IsNormalized())
-                {
-                    _street = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _street = value;
         }
 
         public int Number
         {
             get => _number;
-            set
-            {
-                if (value > 0 && value < 20000)
-                {
-                    _number = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _number = value;
         }
 
         public string City
         {
             get => _city;
-            set
-            {
-                if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
-                {
-                    _city = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _city = value;
         }
 
         public int Zip
         {
             get => _zip;
-            set
-            {
-                if (value > 0 && value < 20000)
-                {
-                    _zip = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _zip = value;
         }
 
         public string Country
         {
             get => _country;
-            set
-            {
-                if (value.Length > 1 && value.Length < 35 && value.IsNormalized())
-                {
-                    _country = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _country = value;
         }
     }
 }

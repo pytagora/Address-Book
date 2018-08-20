@@ -11,29 +11,13 @@ namespace Model
         public string Id
         {
             get => _id;
-            set
-            {
-                if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
-                {
-                    _id = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _id = value;
         }
 
         public string SocialNetwork
         {
             get => _socialNetwork;
-            set
-            {
-                if (value.Length < 20 && value.Length > 4 && value.IsNormalized())
-                {
-                    _socialNetwork = value;
-                }
-                else
-                    throw new InvalidOperationException();
-            }
+            set => _socialNetwork = value;
         }
 
         public string Hyperlink
