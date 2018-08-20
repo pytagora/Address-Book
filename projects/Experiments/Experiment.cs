@@ -5,6 +5,7 @@ using Newtonsoft.Json.Converters;
 using System.IO;
 using Model;
 using FluentValidation;
+using Google.Protobuf;
 using FluentValidation.Results;
 
 namespace Experiments
@@ -121,6 +122,16 @@ namespace Experiments
                     Console.WriteLine("{0} - {1} - {2}", item.FirstName, item.LastName, item.Gender);
                 }
             }
+
+            Contact john = new Contact();
+            john.FirstName = "John";
+            john.LastName = "Doe";
+            john.BirthPlace = "Seattle";
+
+            /*using (var outputFile = File.Create("john.dat"))
+            {
+                john.WriteTo(outputFile);
+            }*/
         }
     }
 }

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+enum PhoneType {
+	MOBILE = 0;
+	HOME = 1;
+	WORK = 2;
+	OTHER = 3;
+}
+
+message PhoneNumber {
+	string number = 1;
+	PhoneType type = 2;
+}
+
+enum EmailType {
+	PERSONAL = 0;
+	HOME = 1;
+	WORK = 2;
+	SCHOOL = 3;
+	OTHER = 4;
+}
+
+message Email {
+	string address = 1;
+	EmailType type = 2;
+}
+
+message Contact {
+	int32 id = 1;
+	string FirstName = 2;
+	string LastName = 3;
+	repeated PhoneNumber phoneNumber = 4;
+	repeated Email email = 5;
+}

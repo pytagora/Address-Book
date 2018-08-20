@@ -26,7 +26,7 @@ namespace ViewModel
 
         public Contact SelectedContact
         {
-            get { return _selectedContact; }
+            get => _selectedContact;
             set
             {
                 _selectedContact = value;

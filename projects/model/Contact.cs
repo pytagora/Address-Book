@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using FluentValidation;
 
 namespace Model
 {
@@ -9,17 +11,82 @@ namespace Model
         private readonly List<Address> _addreesses;
         private readonly List<SocialAccount> _socialAccounts;
 
-        public int Id = 0;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string BirthPlace { get; set; }
-        //public DateTime BirthDay { get; set; }
-        public string Gender { get; set; }
-        public string Comment { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public Contact()
+        private void OnPropertyChanged(string propertyName)
         {
-            ++Id;
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        private int _id;
+        private string _firstName;
+        private string _lastName;
+        private string _birthPlace;
+        //public DateTime BirthDay { get; set; }
+        private string _gender;
+        private string _comment;
+
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged("Id");
+            } 
+        }
+
+        public string FirstName
+        {
+            get => _firstName;
+            set
+            {
+                _firstName = value;
+                OnPropertyChanged("FirstName");
+            } 
+        }
+
+        public string LastName
+        {
+            get => _lastName;
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged("LastName");
+            }
+        }
+
+        public string BirthPlace
+        {
+            get => _birthPlace;
+            set
+            {
+                _birthPlace = value;
+                OnPropertyChanged("BirthPlace");
+            }
+        }
+
+        public string Gender
+        {
+            get => _gender;
+            set
+            {
+                _gender = value;
+                OnPropertyChanged("Gender");
+            }
+        }
+
+        public string Comment
+        {
+            get => _comment;
+            set
+            {
+                _comment = value;
+                OnPropertyChanged("Comment");
+            }
         }
 
         public void AddEmail(Email email)
