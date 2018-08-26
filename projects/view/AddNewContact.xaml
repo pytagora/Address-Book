@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-    Title="Add New Contact" Height="375" Width="800" WindowState="Normal" ResizeMode="NoResize" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True">
+    Title="Add New Contact" Height="575" Width="900" WindowState="Normal" ResizeMode="NoResize" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True">
     <Window.Background>
         <ImageBrush ImageSource="Images/background.jpg"></ImageBrush>
     </Window.Background>
@@ -30,31 +30,32 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label  FontWeight="Bold">First name:</Label>
-        <TextBox Grid.Row="0" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="FirstName"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="FirstName"/>
         <Label  FontWeight="Bold" Grid.Row="1" Grid.Column="0">Last name:</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="LastName"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="LastName"/>
         <Label  FontWeight="Bold" Grid.Row="2" Grid.Column="0">Place of birth:</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="BirthPlace"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="BirthPlace"/>
         <Label  FontWeight="Bold" Grid.Row="3" Grid.Column="0">Date of birth:</Label>
         <DatePicker HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Grid.Row="3" 
                     Grid.Column="1" 
                     Width="200"
+                    Margin="0,10"
                     Name="Birthday"/>
         <Label  FontWeight="Bold" Grid.Row="4" Grid.Column="0" Name="Gender">Gender:</Label>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="0,5,0,0">&#9794; Male</RadioButton>
         <RadioButton Grid.Column="1" Grid.Row="4" Margin="70,5,0,0">&#9792; Female</RadioButton>
         <Label  FontWeight="Bold" Grid.Row="5" Grid.Column="0">Residence:</Label>
-        <TextBox Grid.Row="5" Grid.Column="1" Height="20" Width="200" HorizontalAlignment="Left" Name="Address"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="Address"/>
         <Label  FontWeight="Bold" Grid.Row="6" Grid.Column="0">Phone:</Label>
-        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" />
+        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" />
         <Label  FontWeight="Bold" Grid.Row="7" Grid.Column="0">Email:</Label>
-        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" Name="Email"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="Email"/>
         <Label  FontWeight="Bold" Grid.Row="8" Grid.Column="0">Social Account ID:</Label>
-        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left"/>
         <Label  FontWeight="Bold" Grid.Row="9" Grid.Column="0">Social Network:</Label>
-        <ComboBox Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Width="200" HorizontalAlignment="Left">
+        <ComboBox Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Height="25" Width="200" Margin="0,10" HorizontalAlignment="Left">
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/images/facebook.ico" Height="20" Width="20"/>
@@ -81,7 +82,7 @@
             </ComboBoxItem>
         </ComboBox>
         <Label  FontWeight="Bold" Grid.Row="10" Grid.Column="0">Comment:</Label>
-        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" HorizontalAlignment="Left" Name="Comment"/>
+        <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Height="20" Width="200" Margin="0,10" HorizontalAlignment="Left" Name="Comment"/>
         <Button Grid.Row="11" Grid.Column="2" Name="BtnAdd" Click="BtnAdd_Click" Height="20" Width="70" HorizontalAlignment="Right" Margin="0,0,90,0">_Add</Button>
         <Button Grid.Row="11" Grid.Column="2" Name="BtnCancel" Click="BtnCancel_Click" Height="20" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0">_Cancel</Button>
     </Grid>

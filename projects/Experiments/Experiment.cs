@@ -3,13 +3,29 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using Model;
 using FluentValidation;
 using Google.Protobuf;
 using FluentValidation.Results;
+using Newtonsoft.Json.Serialization;
 
 namespace Experiments
 {
+    public class MyContractResolver : Newtonsoft.Json.Serialization.DefaultContractResolver
+    {
+        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+        {
+            var props = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                .Select(p => base.CreateProperty(p, memberSerialization))
+                .Union(type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                    .Select(f => base.CreateProperty(f, memberSerialization)))
+                .ToList();
+            props.ForEach(p => { p.Writable = true; p.Readable = true; });
+            return props;
+        }
+    }
     class Experiment
     {
         static void ValidationResults(ValidationResult results)
@@ -44,9 +60,9 @@ namespace Experiments
                 Address = "vskobljanec@gmail.com",
                 Type = "Home"
             };
-            EmailValidator emailValidator = new EmailValidator();
-            results = emailValidator.Validate(mainEmail);
-            ValidationResults(results);
+            //EmailValidator emailValidator = new EmailValidator();
+            //results = emailValidator.Validate(mainEmail);
+            //ValidationResults(results);
             contact.AddEmail(mainEmail);
 
             Email schoolEmail = new Email
@@ -111,7 +127,10 @@ namespace Experiments
             using (StreamWriter streamWriter = new StreamWriter(jsonFile))
             using (JsonWriter jsonWriter = new JsonTextWriter(streamWriter))
             {
-                serializer.Serialize(jsonWriter, contacts);
+                //serializer.Serialize(jsonWriter, contacts);
+                var settings = new JsonSerializerSettings() { ContractResolver = new MyContractResolver() };
+                var json = JsonConvert.SerializeObject(contact, settings);
+                serializer.Serialize(jsonWriter, json);
             }
             using (StreamReader r = new StreamReader(jsonFile))
             {

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-        Title="Address Book" Height="650" Width="1200" WindowState="Normal" ResizeMode="NoResize" FontFamily="Times New Roman" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True">
+        Title="Address Book" Height="850" Width="1200" WindowState="Normal" ResizeMode="NoResize" FontFamily="Times New Roman" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True">
     <Window.Background>
         <ImageBrush ImageSource="images/background.jpg"></ImageBrush>
     </Window.Background>
     <Grid Margin="10">
         <TextBlock Height="40" Width="Auto" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top">ADDRESS BOOK</TextBlock>
         <StackPanel Margin="10">
-            <Label Name="LblStatus" Content="Not playing..." HorizontalContentAlignment="Left" Margin="50,25,0,0"/>
+            <Label Name="LblStatus" Content="Not playing..." HorizontalContentAlignment="Left" Margin="50,75,0,0"/>
             <WrapPanel Margin="0,15" HorizontalAlignment="Left">
                 <Button Name="BtnPlay" Margin="10,0,0,0" Click="BtnPlay_Click">_Play</Button>
                 <Button Name="BtnPause" Margin="5,0" Click="BtnPause_Click">_Pause</Button>
@@ -29,7 +29,7 @@
                   SelectedItem="{Binding SelectedContact}"
                   CanUserReorderColumns="False" CanUserResizeColumns="False"
                   CanUserResizeRows="False" CanUserSortColumns="True"
-                  Margin="10,120,150,10"
+                  Margin="10,220,150,10"
                   GridLinesVisibility="Horizontal"
                   Name="DbContacts"
                   AutoGenerateColumns="False">

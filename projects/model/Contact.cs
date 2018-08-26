@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Model
 {
-    public class Contact
+    public class Contact : INotifyPropertyChanged
     {   
         private readonly List<Email> _emails;
         private readonly List<PhoneNumber> _phoneNumbers;
@@ -29,6 +29,10 @@ namespace Model
         private string _gender;
         private string _comment;
 
+        public Contact()
+        {
+        }
+
         public int Id
         {
             get => _id;
@@ -46,6 +50,7 @@ namespace Model
             {
                 _firstName = value;
                 OnPropertyChanged("FirstName");
+                OnPropertyChanged("FullName");
             } 
         }
 
@@ -56,7 +61,13 @@ namespace Model
             {
                 _lastName = value;
                 OnPropertyChanged("LastName");
+                OnPropertyChanged("FullName");
             }
+        }
+
+        public string FullName
+        {
+            get { return string.Format("{0} {1}", FirstName, LastName); }
         }
 
         public string BirthPlace
