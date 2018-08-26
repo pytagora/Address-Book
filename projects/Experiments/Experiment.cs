@@ -3,29 +3,11 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using Model;
-using FluentValidation;
-using Google.Protobuf;
 using FluentValidation.Results;
-using Newtonsoft.Json.Serialization;
 
 namespace Experiments
 {
-    public class MyContractResolver : Newtonsoft.Json.Serialization.DefaultContractResolver
-    {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-        {
-            var props = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                .Select(p => base.CreateProperty(p, memberSerialization))
-                .Union(type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                    .Select(f => base.CreateProperty(f, memberSerialization)))
-                .ToList();
-            props.ForEach(p => { p.Writable = true; p.Readable = true; });
-            return props;
-        }
-    }
     class Experiment
     {
         static void ValidationResults(ValidationResult results)
@@ -129,10 +111,10 @@ namespace Experiments
             {
                 //serializer.Serialize(jsonWriter, contacts);
                 var settings = new JsonSerializerSettings() { ContractResolver = new MyContractResolver() };
-                var json = JsonConvert.SerializeObject(contact, settings);
+                var json = JsonConvert.SerializeObject(contacts, settings);
                 serializer.Serialize(jsonWriter, json);
             }
-            using (StreamReader r = new StreamReader(jsonFile))
+            /*using (StreamReader r = new StreamReader(jsonFile))
             {
                 string json = r.ReadToEnd();
                 List<Contact> writeContacts = JsonConvert.DeserializeObject<List<Contact>>(json);
@@ -140,7 +122,7 @@ namespace Experiments
                 {
                     Console.WriteLine("{0} - {1} - {2}", item.FirstName, item.LastName, item.Gender);
                 }
-            }
+            }*/
 
             Contact john = new Contact();
             john.FirstName = "John";
@@ -151,6 +133,8 @@ namespace Experiments
             {
                 john.WriteTo(outputFile);
             }*/
+            Console.WriteLine("\nProcess done. Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
