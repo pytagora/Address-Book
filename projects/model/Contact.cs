@@ -6,10 +6,10 @@ namespace Model
 {
     public class Contact : INotifyPropertyChanged
     {   
-        private readonly List<Email> _emails;
-        private readonly List<PhoneNumber> _phoneNumbers;
-        private readonly List<Address> _addreesses;
-        private readonly List<SocialAccount> _socialAccounts;
+        private readonly List<Email> _emails = new List<Email>();
+        private readonly List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
+        private readonly List<Address> _addresses = new List<Address>();
+        private readonly List<SocialAccount> _socialAccounts = new List<SocialAccount>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -123,7 +123,7 @@ namespace Model
 
         public IEnumerable<Address> GetAddreesses()
         {
-            return _addreesses;
+            return _addresses;
         }
 
         public void AddPhoneNumber(PhoneNumber phone)
@@ -138,12 +138,12 @@ namespace Model
 
         public void AddAddress(Address addreess)
         {
-            _addreesses.Add(addreess);
+            _addresses.Add(addreess);
         }
 
         public void RemoveAddress(Address addreess)
         {
-            _addreesses.Remove(addreess);
+            _addresses.Remove(addreess);
         }
 
         public void AddSocialAccount(SocialAccount socialAccount)
