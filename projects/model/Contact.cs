@@ -22,16 +22,12 @@ namespace Model
         }
 
         private int _id;
-        private string _firstName;
-        private string _lastName;
-        private string _birthPlace;
+        private string _firstName = string.Empty;
+        private string _lastName = string.Empty;
+        private string _birthPlace = string.Empty;
         //public DateTime BirthDay { get; set; }
-        private string _gender;
-        private string _comment;
-
-        public Contact()
-        {
-        }
+        private string _gender = string.Empty;
+        private string _comment = string.Empty;
 
         public int Id
         {
@@ -67,7 +63,7 @@ namespace Model
 
         public string FullName
         {
-            get { return string.Format("{0} {1}", FirstName, LastName); }
+            get { return $"{FirstName} {LastName}"; }
         }
 
         public string BirthPlace

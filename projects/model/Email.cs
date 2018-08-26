@@ -4,8 +4,8 @@ namespace Model
 {
     public class Email
     {
-        private string _address = "";
-        private string _type = "";
+        private string _address = string.Empty;
+        private string _type = string.Empty;
         public string Address
         {
             get => _address;

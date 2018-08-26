@@ -4,23 +4,15 @@ namespace Model
 {
     public class Address
     {
-        private string _street = "";
+        private string _street = string.Empty;
         private int _number;
-        private string _city = "";
+        private string _city = string.Empty;
         private int _zip;
-        private string _country = "";
+        private string _country = string.Empty;
 
-        public string FullAddress()
+        public string FullAddress
         {
-            if (_city != "" && _number != 0 && _country != "")
-            {
-                string result = _street + " " + _number + " " + _zip + " " + _city + ", " + _country;
-                return result;
-            }
-            else
-            {
-                return "Not Defined!";
-            }
+            get { return $"{_street} {_number} {_zip} {_city} {_country}"; }
         }
 
         public string Street

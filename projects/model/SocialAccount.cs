@@ -5,8 +5,8 @@ namespace Model
     public class SocialAccount
     {
         private string _id;
-        private string _socialNetwork;
-        private string _hyperlink = "";
+        private string _socialNetwork = string.Empty;
+        private string _hyperlink = string.Empty;
 
         public string Id
         {

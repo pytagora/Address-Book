@@ -4,8 +4,8 @@ namespace Model
 {
     public class PhoneNumber
     {
-        private string _number;
-        private string _type;
+        private string _number = string.Empty;
+        private string _type = string.Empty;
 
         public string Number
         {
