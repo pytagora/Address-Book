@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyContractResolver.cs" />
     <Compile Include="Experiment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
