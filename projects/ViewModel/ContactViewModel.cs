@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Windows.Input;
 using Model;
 
 namespace ViewModel
@@ -31,6 +33,37 @@ namespace ViewModel
         }
 
         public MyICommand DeleteCommand { get; set; }
+
+        private ICommand _addCommand;
+        public ICommand AddCommand
+        {
+            get
+            {
+                if (_addCommand == null)
+                {
+                    _addCommand = new RelayCommand(AddExecute, CanAddExecute, false);
+                }
+
+                return _addCommand;
+            }
+        }
+
+        private void AddExecute(object parameter)
+        {
+            Contacts.Add(Contact);
+        }
+
+        private bool CanAddExecute(object parameter)
+        {
+            if (string.IsNullOrEmpty(Contact.FirstName) || string.IsNullOrEmpty(Contact.LastName))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         public ContactViewModel()
         {
