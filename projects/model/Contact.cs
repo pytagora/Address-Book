@@ -15,9 +15,10 @@ namespace Model
 
         private void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
+            PropertyChangedEventHandler propertyChanged = PropertyChanged;
+            if (propertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
 
@@ -35,7 +36,6 @@ namespace Model
             set
             {
                 _id = value;
-                OnPropertyChanged("Id");
             } 
         }
 
@@ -45,8 +45,8 @@ namespace Model
             set
             {
                 _firstName = value;
-                OnPropertyChanged("FirstName");
-                OnPropertyChanged("FullName");
+                OnPropertyChanged(FirstName);
+                OnPropertyChanged(FullName);
             } 
         }
 
@@ -56,8 +56,8 @@ namespace Model
             set
             {
                 _lastName = value;
-                OnPropertyChanged("LastName");
-                OnPropertyChanged("FullName");
+                OnPropertyChanged(LastName);
+                OnPropertyChanged(FullName);
             }
         }
 
@@ -72,7 +72,7 @@ namespace Model
             set
             {
                 _birthPlace = value;
-                OnPropertyChanged("BirthPlace");
+                OnPropertyChanged(BirthPlace);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Model
             set
             {
                 _gender = value;
-                OnPropertyChanged("Gender");
+                OnPropertyChanged(Gender);
             }
         }
 
@@ -92,7 +92,7 @@ namespace Model
             set
             {
                 _comment = value;
-                OnPropertyChanged("Comment");
+                OnPropertyChanged(Comment);
             }
         }
 
