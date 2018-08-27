@@ -85,7 +85,7 @@ namespace SampleConsoleApplication
                 Console.WriteLine("\nEnter contact's new social account ID: ");
                 socialAccount.Id = Console.ReadLine();
                 Console.WriteLine("\nEnter contact's social network: ");
-                socialAccount.SocialNetwork = Console.ReadLine();
+                socialAccount.Network = Console.ReadLine();
                 contact.AddSocialAccount(socialAccount);
                 Console.WriteLine("\nTo add another contact's social account press key 'A': ");
                 key = Console.ReadKey().KeyChar;

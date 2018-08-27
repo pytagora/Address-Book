@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                      mc:Ignorable="d"
+        xmlns:viewModel="clr-namespace:ViewModel;assembly=ViewModel"
+        mc:Ignorable="d"
         Title="Address Book" Height="850" Width="1200" WindowState="Normal" ResizeMode="NoResize" FontFamily="Times New Roman" ShowTitleBar="True" ShowIconOnTitleBar="True" ShowMinButton="True">
+    <Window.Resources>
+        <viewModel:ContactViewModel x:Key="ContactViewModel"/>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="images/background.jpg"></ImageBrush>
     </Window.Background>
@@ -25,38 +29,27 @@
             <Button Name="BtnChangeContact" Click="BtnChangeContact_Click" Margin="0,15,0,0">_Change</Button>
             <Button Name="BtnDeleteContact" Command="{Binding DeleteCommand}" Click="BtnDeleteContact_Click" Margin="0,15,0,0">_Delete</Button>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding Contacts}"
+        <ListView ItemsSource="{Binding Contacts}"
                   SelectedItem="{Binding SelectedContact}"
-                  CanUserReorderColumns="False" CanUserResizeColumns="False"
-                  CanUserResizeRows="False" CanUserSortColumns="True"
                   Margin="10,220,150,10"
-                  GridLinesVisibility="Horizontal"
-                  Name="DbContacts"
-                  AutoGenerateColumns="False">
-            <DataGrid.CellStyle>
-                <Style TargetType="DataGridCell">
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="Height" Value="20" />
-                    <Setter Property="HorizontalAlignment" Value="Right"/>
-                </Style>
-            </DataGrid.CellStyle>
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
-                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
-                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Birth place" Binding="{Binding BirthPlace}"/>
-                <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday}" />
-                <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
-                <DataGridTextColumn Header="Residence" Binding="{Binding Residence}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" />
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Social Account ID" Binding="{Binding SocialAccountID}"/>
-                <DataGridTextColumn Header="Social Network" Binding="{Binding SocialNetwork}" />
-                <DataGridTextColumn Header="Comment" Binding="{Binding Comment}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                  Name="DbContacts">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="Auto"/>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="Auto"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="Auto"/>
+                    <GridViewColumn Header="Birth place" DisplayMemberBinding="{Binding BirthPlace}" Width="Auto"/>
+                    <GridViewColumn Header="Birthday" DisplayMemberBinding="{Binding BirthDay}"  Width="Auto"/>
+                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" Width="Auto"/>
+                    <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Address}" Width="Auto"/>
+                    <GridViewColumn Header="Phone number" DisplayMemberBinding="{Binding PhoneNumber}" Width="Auto"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="Auto"/>
+                    <GridViewColumn Header="Social Account ID" DisplayMemberBinding="{Binding SocialAccount.Id}" Width="Auto"/>
+                    <GridViewColumn Header="Social Network" DisplayMemberBinding="{Binding SocialAccount.Network}" Width="Auto"/>
+                    <GridViewColumn Header="Comment" DisplayMemberBinding="{Binding Comment}"  Width="Auto"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </controls:MetroWindow>    
 

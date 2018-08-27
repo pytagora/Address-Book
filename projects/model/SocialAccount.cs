@@ -5,7 +5,7 @@ namespace Model
     public class SocialAccount
     {
         private string _id;
-        private string _socialNetwork = string.Empty;
+        private string _network = string.Empty;
         private string _hyperlink = string.Empty;
 
         public string Id
@@ -14,10 +14,10 @@ namespace Model
             set => _id = value;
         }
 
-        public string SocialNetwork
+        public string Network
         {
-            get => _socialNetwork;
-            set => _socialNetwork = value;
+            get => _network;
+            set => _network = value;
         }
 
         public string Hyperlink
@@ -25,9 +25,9 @@ namespace Model
             get => _hyperlink;
             set
             {
-                if (_id != "" && _socialNetwork != "")
+                if (_id != "" && _network != "")
                 {
-                    _hyperlink = "https://www." + _socialNetwork + ".com/" + _id;
+                    _hyperlink = "https://www." + _network + ".com/" + _id;
                 }
             }
         }

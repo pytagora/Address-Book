@@ -7,7 +7,7 @@ using Microsoft.Win32;
 
 namespace View
 {
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ContactView.xaml
     public partial class MyAddressBook
     {
 

@@ -71,7 +71,7 @@ namespace Experiments
             SocialAccount socialAccount = new SocialAccount
             {
                 Id = "pytagora",
-                SocialNetwork = "Github"
+                Network = "Github"
             };
             SocialAccountValidator socialAccountValidator = new SocialAccountValidator();
             results = socialAccountValidator.Validate(socialAccount);
