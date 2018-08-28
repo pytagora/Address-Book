@@ -9,15 +9,15 @@ namespace ViewModel
 {
     class RelayCommand : ICommand
     {
-        private Action<object> executeAction;
-        private Func<object, bool> canExecute;
-        private bool canExecuteCache;
+        private readonly Action<object> executeAction;
+        private readonly Func<object, bool> canExecute;
+        private bool _canExecuteCache;
 
         public RelayCommand(Action<object> executeAction, Func<object, bool> canExecute, bool canExecuteCache)
         {
             this.canExecute = canExecute;
             this.executeAction = executeAction;
-            this.canExecuteCache = canExecuteCache;
+            this._canExecuteCache = canExecuteCache;
         }
 
         public bool CanExecute(object parameter)

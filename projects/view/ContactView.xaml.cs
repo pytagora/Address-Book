@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Microsoft.Win32;
+using ViewModel;
 
 namespace View
 {
@@ -16,7 +17,7 @@ namespace View
         public MyAddressBook()
         {
             InitializeComponent();
-
+            DataContext = new ContactViewModel();
             // adding two example to see how the format fits.
             // contacts.Add(new Contact() { Id = 1, FirstName = "Pero", LastName = "Perica", Residence = "Zagreb", BirthPlace = "Velika Gorica", Gender = "Male", Number = 38511512869, Email = "pero.perica@gmail.com", SocialNetworkId = "pp_erica", Type = "Twitter", Birthday = new DateTime(1998, 3, 1)});
             // contacts.Add(new Contact() { Id = 2, FirstName = "Ivica", LastName = "Ivić", Residence = "Velika Gorica", BirthPlace = "Osijek", Gender = "Male", Number = 385952438719, Email = "iivic@gmail.com", SocialNetworkId = "ivica_ribica", Type = "Facebook", Birthday = new DateTime(1995, 6, 3) });

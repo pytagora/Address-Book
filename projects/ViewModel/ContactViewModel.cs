@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Runtime.Remoting;
 using System.Windows.Input;
 using Model;
 
@@ -30,6 +32,15 @@ namespace ViewModel
                 _contacts = value;
                 NotifyPropertyChanged("Contacts");
             }
+        }
+
+        public ContactViewModel()
+        {
+            Contact = new Contact();
+            Contacts = new ObservableCollection<Contact>();
+            LoadContacts();
+            DeleteCommand = new MyICommand(OnDelete, CanDelete);
+            UpdateCommand = new ContactUpdateCommand(this);
         }
 
         public MyICommand DeleteCommand { get; set; }
@@ -65,12 +76,6 @@ namespace ViewModel
             }
         }
 
-        public ContactViewModel()
-        {
-            LoadContacts();
-            DeleteCommand = new MyICommand(OnDelete, CanDelete);
-        }
-
         public void LoadContacts()
         {
             ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
@@ -99,6 +104,28 @@ namespace ViewModel
         private bool CanDelete()
         {
             return SelectedContact != null;
+        }
+
+        public void SaveChanges()
+        {
+            Debug.Assert(false, String.Format("{0} {1} was updated.", Contact.FirstName, Contact.LastName));
+        }
+
+        public ICommand UpdateCommand
+        {
+            get;
+            private set;
+        }
+
+        public bool CanUpdate
+        {
+            get
+            {
+                if (Contact == null)
+                    return false;
+
+                return !String.IsNullOrWhiteSpace(Contact.FirstName);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
